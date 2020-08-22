@@ -298,7 +298,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/springboot/%EA%B8%B0%EC%88%A0%EB%B8%94%EB%A1%9C%EA%B7%B8/post/" rel="permalink">springboot-2.2 Init 세팅에 대한 기록
+        <a href="/springboot/%EA%B8%B0%EC%88%A0%EB%B8%94%EB%A1%9C%EA%B7%B8/post/" rel="permalink">@Autowired 가 없는 이유
 </a>
       
     </h2>
@@ -323,10 +323,10 @@
 
   </p>
 
-    <p class="archive__item-excerpt" itemprop="description">기본 springframework 을 만들면서 기록을 함께 해두기 위해 작성되었음.
-아래 소르 링크를 참조하면 기본적으로 제작한 springboot 2.2.0 을 기반으로 작성한 소스코드를
-내려받고 실행해볼 수 있습니다.
-</p>
+    <p class="archive__item-excerpt" itemprop="description">@Autowired 가 없는 이유는 빈을 주입받는 방식에
+@Autowired setter 생성자 주입방식이 있는데
+여기서는 Controller 와 Service 에서 lombok 의 @RequiredArgsConstructor 로 생성자 Bean 을 주입받기 때문에
+Autowire...</p>
   </article>
 </div>
 
