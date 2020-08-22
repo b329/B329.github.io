@@ -1,5 +1,6 @@
 ---
-title: "collection!"
+layout: page
+title: "Kafka 에 대해서"
 date: 2020-08-22 08:26:28 -0400
 categories: jekyll update
 ---

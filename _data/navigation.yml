@@ -7,7 +7,7 @@ main:
   - title: "Pages"
     url: /page-archive/
   - title: "Collections"
-    url: /collection-archive/
+    url: /_art_colleciton/kafka_subdir/
 
 docs:
   - title: Content
