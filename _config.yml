@@ -18,7 +18,7 @@ minimal_mistakes_skin    : "dirt" #"default", "air", "aqua", "contrast", "dark",
 
 # Site Settings
 locale                   : "ko-KR"
-title                    : "Site Title"
+title                    : "안녕, 피츠버그 그리고 책"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Your Name"
@@ -28,7 +28,7 @@ baseurl                  : ""# the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
-masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
+masthead_title           : "die stunde mit dir selbst" # overrides the website title displayed in the masthead, use " " for no title
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
@@ -95,18 +95,18 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
+  name             : "Dennis' NA"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
-  location         : "Somewhere"
-  email            :
+  bio              : "**MBTI** INTP"
+  location         : "I'm from nowhere"
+  email            : 4e65rv@gmail.com
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      # url: "mailto:your.name@email.com"
+      url: "mailto:4e65rv@gmail.com"
     - label: "Website"
       icon: "fas fa-fw fa-link"
-      # url: "https://your-website.com"
+      url: "https://b329.github.io"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       # url: "https://twitter.com/"
@@ -221,6 +221,7 @@ plugins:
   - jekyll-gist
   - jekyll-feed
   - jekyll-include-cache
+  - jekyll-archives
 
 # mimic GitHub Pages with --safe
 whitelist:
@@ -278,7 +279,7 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
-      comments: # true
+      comments: true
       share: true
       related: true
   # _docs
@@ -288,3 +289,11 @@ defaults:
     values:
       sidebar:
         nav: "docs"
+  # _collection
+  - scope:
+      path: ""
+      type: art_collection
+    values:
+      layout: page
+      sidebar:
+        nav: "art_collection"

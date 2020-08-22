@@ -1,4 +1,4 @@
-I"ý
+I"Å
 
 <div class="masthead">
   <div class="masthead__inner-wrap">
@@ -6,23 +6,17 @@
       <nav id="site-nav" class="greedy-nav">
         
         <a class="site-title" href="/">
-          Site Title
+          die stunde mit dir selbst
           
         </a>
         <ul class="visible-links"><li class="masthead__menu-item">
-              <a href="/test/_portfolio/">Quick-Start Guide</a>
-            </li><li class="masthead__menu-item">
               <a href="/year-archive/">Posts</a>
-            </li><li class="masthead__menu-item">
-              <a href="/categories/">Categories</a>
             </li><li class="masthead__menu-item">
               <a href="/tags/">Tags</a>
             </li><li class="masthead__menu-item">
               <a href="/page-archive/">Pages</a>
             </li><li class="masthead__menu-item">
               <a href="/collection-archive/">Collections</a>
-            </li><li class="masthead__menu-item">
-              <a href="https://google.com">External Link</a>
             </li></ul>
         
         <button class="greedy-nav__toggle hidden" type="button">
