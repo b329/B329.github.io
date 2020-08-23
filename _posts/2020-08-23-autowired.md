@@ -1,10 +1,10 @@
 ---
-layout: post
 title: "@Autowired 가 없는 이유"
 date: 2020-08-21 08:26:28 -0400
 categories: springboot
-tags: [blog, github.io]
+tags: [springboot]
 ---
+
 @Autowired 가 없는 이유는 빈을 주입받는 방식에
 @Autowired setter 생성자 주입방식이 있는데
 여기서는 Controller 와 Service 에서 lombok 의 @RequiredArgsConstructor 로 생성자 Bean 을 주입받기 때문에
@@ -13,13 +13,10 @@ Autowired 가 없다.
 피하기 위해서이다.
 
 
-​
-
 @RequiredArgsConstructor
 @Service
 public class PostsService {
     private final PostsRepository postsRepository;
-    
     @Transactional
     public Long save(PostsSaveRequestDto requestDto) {
         return postsRepository.save(requestDto.toEntity()).getId();
@@ -42,7 +39,6 @@ public class PostsService {
     }
 }
 
-​```
 
 관련소스 참조: [B329’s GitHub repo][jekyll-gh].
 
