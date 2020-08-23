@@ -1,30 +1,27 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-08-23T15:29:05+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">안녕, 피츠버그 그리고 책</title><subtitle>기술블로그</subtitle><author><name>4e65rv</name></author><entry><title type="html">springboot-2.2 Init 세팅에 대한 기록</title><link href="http://localhost:4000/springboot/post/" rel="alternate" type="text/html" title="springboot-2.2 Init 세팅에 대한 기록" /><published>2020-08-22T21:26:28+09:00</published><updated>2020-08-22T21:26:28+09:00</updated><id>http://localhost:4000/springboot/post</id><content type="html" xml:base="http://localhost:4000/springboot/post/">&lt;p&gt;기본 springframework 을 만들면서 기록을 함께 해두기 위해 작성되었음.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-08-23T15:56:01+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">안녕, 피츠버그 그리고 책</title><subtitle>기술블로그</subtitle><author><name>4e65rv</name></author><entry><title type="html">springboot-2.2 Init 세팅에 대한 기록</title><link href="http://localhost:4000/springboot/post/" rel="alternate" type="text/html" title="springboot-2.2 Init 세팅에 대한 기록" /><published>2020-08-22T21:26:28+09:00</published><updated>2020-08-22T21:26:28+09:00</updated><id>http://localhost:4000/springboot/post</id><content type="html" xml:base="http://localhost:4000/springboot/post/">&lt;p&gt;기본 springframework 을 만들면서 기록을 함께 해두기 위해 작성되었음.
 아래 소스 링크를 참조하면 기본적으로 제작한 springboot 2.2.0 을 기반으로 작성한 소스코드를
 내려받고 실행해볼 수 있습니다.&lt;/p&gt;
 
-&lt;p&gt;​&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;
-branch 에 대한 설명 
-develop_1 : 기본 framework 까지 
-develop_2 : mustache 를 이용한 화면 구성까지
-향후 목표는 이 기본 framework 에 restAPI 를 구성하고 그 위해 Kafka 를 돌릴수 있게
+&lt;ul&gt;
+  &lt;li&gt;branch 에 대한 설명&lt;/li&gt;
+  &lt;li&gt;develop_1 : 기본 framework 까지&lt;/li&gt;
+  &lt;li&gt;develop_2 : mustache 를 이용한 화면 구성까지&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;관련소스 참조: &lt;a href=&quot;https://github.com/b329/springboot2.git&quot;&gt;B329’s GitHub repo&lt;/a&gt;.&lt;/p&gt;</content><author><name>4e65rv</name></author><category term="springboot" /><category term="kafka" /><summary type="html">기본 springframework 을 만들면서 기록을 함께 해두기 위해 작성되었음. 아래 소스 링크를 참조하면 기본적으로 제작한 springboot 2.2.0 을 기반으로 작성한 소스코드를 내려받고 실행해볼 수 있습니다.</summary></entry><entry><title type="html">springboot-2.2 Init 세팅에 대한 기록</title><link href="http://localhost:4000/kafka/kafka/" rel="alternate" type="text/html" title="springboot-2.2 Init 세팅에 대한 기록" /><published>2020-08-22T21:26:28+09:00</published><updated>2020-08-22T21:26:28+09:00</updated><id>http://localhost:4000/kafka/kafka</id><content type="html" xml:base="http://localhost:4000/kafka/kafka/">&lt;p&gt;기본 springframework 을 만들면서 기록을 함께 해두기 위해 작성되었음.
+아래 소스 링크를 참조하면 기본적으로 제작한 springboot 2.2.0 을 기반으로 작성한 소스코드를내려받고 실행해볼 수 있습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;branch 에 대한 설명&lt;/li&gt;
+  &lt;li&gt;develop_1 : 기본 framework 까지&lt;/li&gt;
+  &lt;li&gt;develop_2 : mustache 를 이용한 화면 구성까지&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;향후 목표는 이 기본 framework 에 restAPI 를 구성하고 그 위해 Kafka 를 돌릴수 있게
 소스 작업을 하는 것입니다.
-물론 Kafka Infra 도 구축울 해야겠지요.
-​&lt;/code&gt;&lt;/p&gt;
+물론 Kafka Infra 도 구축울 해야겠지요.&lt;/p&gt;
 
-&lt;p&gt;관련소스 참조: &lt;a href=&quot;https://github.com/b329/springboot2.git&quot;&gt;B329’s GitHub repo&lt;/a&gt;.&lt;/p&gt;</content><author><name>4e65rv</name></author><category term="springboot" /><summary type="html">기본 springframework 을 만들면서 기록을 함께 해두기 위해 작성되었음. 아래 소스 링크를 참조하면 기본적으로 제작한 springboot 2.2.0 을 기반으로 작성한 소스코드를 내려받고 실행해볼 수 있습니다.</summary></entry><entry><title type="html">springboot-2.2 Init 세팅에 대한 기록</title><link href="http://localhost:4000/kafka/kafka/" rel="alternate" type="text/html" title="springboot-2.2 Init 세팅에 대한 기록" /><published>2020-08-22T21:26:28+09:00</published><updated>2020-08-22T21:26:28+09:00</updated><id>http://localhost:4000/kafka/kafka</id><content type="html" xml:base="http://localhost:4000/kafka/kafka/">&lt;p&gt;기본 springframework 을 만들면서 기록을 함께 해두기 위해 작성되었음.
-아래 소스 링크를 참조하면 기본적으로 제작한 springboot 2.2.0 을 기반으로 작성한 소스코드를
-내려받고 실행해볼 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;​&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;
-branch 에 대한 설명 
-develop_1 : 기본 framework 까지 
-develop_2 : mustache 를 이용한 화면 구성까지
-향후 목표는 이 기본 framework 에 restAPI 를 구성하고 그 위해 Kafka 를 돌릴수 있게
-소스 작업을 하는 것입니다.
-물론 Kafka Infra 도 구축울 해야겠지요.
-​&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;관련소스 참조: &lt;a href=&quot;https://github.com/b329/springboot2.git&quot;&gt;B329’s GitHub repo&lt;/a&gt;.&lt;/p&gt;</content><author><name>4e65rv</name></author><category term="kafka" /><summary type="html">기본 springframework 을 만들면서 기록을 함께 해두기 위해 작성되었음. 아래 소스 링크를 참조하면 기본적으로 제작한 springboot 2.2.0 을 기반으로 작성한 소스코드를 내려받고 실행해볼 수 있습니다.</summary></entry><entry><title type="html">@Autowired 가 없는 이유</title><link href="http://localhost:4000/springboot/post/" rel="alternate" type="text/html" title="@Autowired 가 없는 이유" /><published>2020-08-21T21:26:28+09:00</published><updated>2020-08-21T21:26:28+09:00</updated><id>http://localhost:4000/springboot/post</id><content type="html" xml:base="http://localhost:4000/springboot/post/">&lt;p&gt;@Autowired 가 없는 이유는 빈을 주입받는 방식에
+&lt;p&gt;관련소스 참조: &lt;a href=&quot;https://github.com/b329/springboot2.git&quot;&gt;B329’s GitHub repo&lt;/a&gt;.&lt;/p&gt;</content><author><name>4e65rv</name></author><category term="kafka" /><summary type="html">기본 springframework 을 만들면서 기록을 함께 해두기 위해 작성되었음. 아래 소스 링크를 참조하면 기본적으로 제작한 springboot 2.2.0 을 기반으로 작성한 소스코드를내려받고 실행해볼 수 있습니다.</summary></entry><entry><title type="html">@Autowired 가 없는 이유</title><link href="http://localhost:4000/springboot/post/" rel="alternate" type="text/html" title="@Autowired 가 없는 이유" /><published>2020-08-21T21:26:28+09:00</published><updated>2020-08-21T21:26:28+09:00</updated><id>http://localhost:4000/springboot/post</id><content type="html" xml:base="http://localhost:4000/springboot/post/">&lt;p&gt;@Autowired 가 없는 이유는 빈을 주입받는 방식에
 @Autowired setter 생성자 주입방식이 있는데
 여기서는 Controller 와 Service 에서 lombok 의 @RequiredArgsConstructor 로 생성자 Bean 을 주입받기 때문에
 Autowired 가 없다.
@@ -62,4 +59,4 @@ public PostsResponseDto findById(Long id) {
 
 &lt;p&gt;​```&lt;/p&gt;
 
-&lt;p&gt;관련소스 참조: &lt;a href=&quot;https://github.com/b329/springboot2.git&quot;&gt;B329’s GitHub repo&lt;/a&gt;.&lt;/p&gt;</content><author><name>4e65rv</name></author><category term="springboot" /><summary type="html">@Autowired 가 없는 이유는 빈을 주입받는 방식에 @Autowired setter 생성자 주입방식이 있는데 여기서는 Controller 와 Service 에서 lombok 의 @RequiredArgsConstructor 로 생성자 Bean 을 주입받기 때문에 Autowired 가 없다. 생성자를 직접 안쓰고 lombok 을 사용하는 이점은 해당 클래스의 의존성 관계가 변경될때마다 생성자코드를 계속해서 수정해야 하는 번거로움을 피하기 위해서이다.</summary></entry></feed>
+&lt;p&gt;관련소스 참조: &lt;a href=&quot;https://github.com/b329/springboot2.git&quot;&gt;B329’s GitHub repo&lt;/a&gt;.&lt;/p&gt;</content><author><name>4e65rv</name></author><category term="springboot" /><category term="blog" /><category term="github.io" /><summary type="html">@Autowired 가 없는 이유는 빈을 주입받는 방식에 @Autowired setter 생성자 주입방식이 있는데 여기서는 Controller 와 Service 에서 lombok 의 @RequiredArgsConstructor 로 생성자 Bean 을 주입받기 때문에 Autowired 가 없다. 생성자를 직접 안쓰고 lombok 을 사용하는 이점은 해당 클래스의 의존성 관계가 변경될때마다 생성자코드를 계속해서 수정해야 하는 번거로움을 피하기 위해서이다.</summary></entry></feed>
