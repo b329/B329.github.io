@@ -5,7 +5,7 @@ categories: springboot
 tags: [springboot]
 ---
 
-@Autowired 가 없는 이유는 빈을 주입받는 방식에
+- @Autowired 가 없는 이유는 빈을 주입받는 방식에
 @Autowired setter 생성자 주입방식이 있는데
 여기서는 Controller 와 Service 에서 lombok 의 @RequiredArgsConstructor 로 생성자 Bean 을 주입받기 때문에
 Autowired 가 없다.
