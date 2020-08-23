@@ -12,7 +12,7 @@ Autowired 가 없다.
 생성자를 직접 안쓰고 lombok 을 사용하는 이점은 해당 클래스의 의존성 관계가 변경될때마다 생성자코드를 계속해서 수정해야 하는 번거로움을
 피하기 위해서이다.
 
-
+~~~java
 @RequiredArgsConstructor
 @Service
 public class PostsService {
@@ -38,6 +38,7 @@ public class PostsService {
         return new PostsResponseDto(entity);
     }
 }
+~~~
 
 
 관련소스 참조: [B329’s GitHub repo][jekyll-gh].

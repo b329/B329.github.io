@@ -18,13 +18,13 @@ var store = [{
         "teaser": "http://localhost:4000/assets/images/500x300.png"
       },{
         "title": "Kafka 개요",
-        "excerpt":"Apache Kafka(아파치 카프카)는 LinkedIn에서 개발된 분산 메시징 시스템으로써 2011년에 오픈소스로 공개되었다. 대용량의 실시간 로그처리에 특화된 아키텍처 설계를 통하여 기존 메시징 시스템보다 우수한 TPS를 보여주고 있다. Introduction APACHE KAFKA ™는 분산 형 스트리밍 플랫폼 입니다. 그게 정확히 무슨 뜻입니까? 우리는 스트리밍 플랫폼이 세 가지 핵심 기능을 가지고 있다고 생각합니다. 이를 통해...","categories": ["kafka"],
+        "excerpt":"Apache Kafka(아파치 카프카)는 LinkedIn에서 개발된 분산 메시징 시스템으로써 2011년에 오픈소스로 공개되었다. 대용량의 실시간 로그처리에 특화된 아키텍처 설계를 통하여 기존 메시징 시스템보다 우수한 TPS를 보여주고 있다. INTRODUCTION APACHE KAFKA ™는 분산 형 스트리밍 플랫폼 입니다. 그게 정확히 무슨 뜻입니까? 우리는 스트리밍 플랫폼이 세 가지 핵심 기능을 가지고 있다고 생각합니다. 이를 통해...","categories": ["kafka"],
         "tags": ["kafka"],
         "url": "http://localhost:4000/kafka/kafka/",
         "teaser": "http://localhost:4000/assets/images/500x300.png"
       },{
         "title": "[Kafka]카프카의 특징-1",
-        "excerpt":"이 글은 카프카, 데이터 플랫폼의 최강자 고승범/공용준 님의 책을 공부하며 정리하는 글입니다. 분산시스템 단일 시스템보다 더 높은 성능 하나의 시스템이 초당 1000개의 메세지로 cpu 100% 사용한다면 초당 900은 90% CPU 사용량이다 만약 서버 한대를 추가하면 CPU 사용량(대당)이 45% 수준이 된다. 초당 처리 할 메시지양과 그에 따른 CPU 사용량을 고려해 브로커...","categories": ["kafka"],
+        "excerpt":"이 글은 카프카, 데이터 플랫폼의 최강자 고승범/공용준 님의 책을 공부하며 정리하는 글입니다. INTRODUCTION APACHE KAFKA ™는 분산 형 스트리밍 플랫폼 입니다. 그게 정확히 무슨 뜻입니까? 우리는 스트리밍 플랫폼이 세 가지 핵심 기능을 가지고 있다고 생각합니다. 이를 통해 레코드 스트림을 게시하고 구독 할 수 있습니다. 이 점에서 메시지 큐 또는 엔터프라이즈...","categories": ["kafka"],
         "tags": ["kafka"],
         "url": "http://localhost:4000/kafka/kafka_1/",
         "teaser": "http://localhost:4000/assets/images/500x300.png"

@@ -1,0 +1,13 @@
+I"<p>기본 springframework 을 만들면서 기록을 함께 해두기 위해 작성되었음.
+아래 소스 링크를 참조하면 기본적으로 제작한 springboot 2.2.0 을 기반으로 작성한 소스코드를
+내려받고 실행해볼 수 있습니다.</p>
+
+<ul>
+  <li>branch 에 대한 설명</li>
+  <li>develop_1 : 기본 framework 까지</li>
+  <li>develop_2 : mustache 를 이용한 화면 구성까지</li>
+</ul>
+
+<p>관련소스 참조: <a href="https://github.com/b329/springboot2.git">B329’s GitHub repo</a>.</p>
+
+:ET

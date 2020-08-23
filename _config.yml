@@ -94,7 +94,7 @@ analytics:
 # Site Author
 author:
   name             : "4e65rv"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/images/bio-photo.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "**MBTI :** INTP" # "I am an **amazing** person."
   location         : "I'm from nowhere"
   email            :

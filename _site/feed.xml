@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-08-23T18:14:33+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">안녕, 피츠버그 그리고 책</title><subtitle>기술블로그</subtitle><author><name>4e65rv</name></author><entry><title type="html">springboot-2.2 Init 세팅에 대한 기록</title><link href="http://localhost:4000/springboot/post/" rel="alternate" type="text/html" title="springboot-2.2 Init 세팅에 대한 기록" /><published>2020-08-22T21:26:28+09:00</published><updated>2020-08-22T21:26:28+09:00</updated><id>http://localhost:4000/springboot/post</id><content type="html" xml:base="http://localhost:4000/springboot/post/">&lt;p&gt;기본 springframework 을 만들면서 기록을 함께 해두기 위해 작성되었음.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-08-23T18:55:37+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">안녕, 피츠버그 그리고 책</title><subtitle>기술블로그</subtitle><author><name>4e65rv</name></author><entry><title type="html">springboot-2.2 Init 세팅에 대한 기록</title><link href="http://localhost:4000/springboot/post/" rel="alternate" type="text/html" title="springboot-2.2 Init 세팅에 대한 기록" /><published>2020-08-22T21:26:28+09:00</published><updated>2020-08-22T21:26:28+09:00</updated><id>http://localhost:4000/springboot/post</id><content type="html" xml:base="http://localhost:4000/springboot/post/">&lt;p&gt;기본 springframework 을 만들면서 기록을 함께 해두기 위해 작성되었음.
 아래 소스 링크를 참조하면 기본적으로 제작한 springboot 2.2.0 을 기반으로 작성한 소스코드를
 내려받고 실행해볼 수 있습니다.&lt;/p&gt;
 
@@ -11,19 +11,141 @@
 &lt;p&gt;관련소스 참조: &lt;a href=&quot;https://github.com/b329/springboot2.git&quot;&gt;B329’s GitHub repo&lt;/a&gt;.&lt;/p&gt;</content><author><name>4e65rv</name></author><category term="springboot" /><category term="springboot" /><summary type="html">기본 springframework 을 만들면서 기록을 함께 해두기 위해 작성되었음. 아래 소스 링크를 참조하면 기본적으로 제작한 springboot 2.2.0 을 기반으로 작성한 소스코드를 내려받고 실행해볼 수 있습니다.</summary></entry><entry><title type="html">Kafka 개요</title><link href="http://localhost:4000/kafka/kafka/" rel="alternate" type="text/html" title="Kafka 개요" /><published>2020-08-22T21:26:28+09:00</published><updated>2020-08-22T21:26:28+09:00</updated><id>http://localhost:4000/kafka/kafka</id><content type="html" xml:base="http://localhost:4000/kafka/kafka/">&lt;p&gt;Apache Kafka(아파치 카프카)는 LinkedIn에서 개발된 분산 메시징 시스템으로써 2011년에 오픈소스로 공개되었다.
 대용량의 실시간 로그처리에 특화된 아키텍처 설계를 통하여 기존 메시징 시스템보다 우수한 TPS를 보여주고 있다.&lt;/p&gt;
 
+&lt;p&gt;&lt;strong&gt;INTRODUCTION&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;APACHE KAFKA ™는 분산 형 스트리밍 플랫폼 입니다. 그게 정확히 무슨 뜻입니까?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;우리는 스트리밍 플랫폼이 세 가지 핵심 기능을 가지고 있다고 생각합니다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;이를 통해 레코드 스트림을 게시하고 구독 할 수 있습니다. 이 점에서 메시지 큐 또는 엔터프라이즈 메시징 시스템과 유사합니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;내결함성있는 방식으로 레코드 스트림을 저장할 수 있습니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;발생하는 레코드 스트림을 처리 할 수 있습니다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;카프카는 무엇에 좋은가?&lt;/strong&gt;&lt;/p&gt;
+
 &lt;ul&gt;
-  &lt;li&gt;Introduction
-APACHE KAFKA ™는 분산 형 스트리밍 플랫폼 입니다. 그게 정확히 무슨 뜻입니까?&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;그것은 두 가지 광범위한 종류의 응용 프로그램에 사용됩니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;시스템 또는 응용 프로그램간에 데이터를 안정적으로 얻는 실시간 스트리밍 데이터 파이프 라인 구축&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;데이터 스트림을 변환하거나 이에 반응하는 실시간 스트리밍 어플리케이션 구축&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;우리는 스트리밍 플랫폼이 세 가지 핵심 기능을 가지고 있다고 생각합니다.
-이를 통해 레코드 스트림을 게시하고 구독 할 수 있습니다. 이 점에서 메시지 큐 또는 엔터프라이즈 메시징 시스템과 유사합니다.
-내결함성있는 방식으로 레코드 스트림을 저장할 수 있습니다.
-발생하는 레코드 스트림을 처리 할 수 있습니다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;USE CASES&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;https://kafka.apache.org/uses&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;MESSAGING&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;카프카는보다 전통적인 메시지 브로커를 대신하여 잘 작동합니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;메시지 브로커는 다양한 이유로 사용됩니다 (데이터 생성자에서 처리를 분리하고 처리되지 않은 메시지를 버퍼링하는 등).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;대부분의 메시징 시스템과 비교하여, Kafka는 뛰어난 처리량, 기본 제공 파티셔닝, 복제 및 내결함성을 갖추고 있어 대규모 메시지 처리 응용 프로그램에 적합한 솔루션입니다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;WEBSITE ACTIVITY TRACKING&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Kafka의 원래의 사용 사례는 사용자 활동 추적 파이프 라인을 실시간 게시 - 구독 피드 집합으로 재구성 할 수 있어야했습니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;이는 사이트 활동 (페이지 조회수, 검색 또는 사용자가 취할 수있는 기타 작업)이 활동 유형별로 하나의 주제와 함께 중앙 주제에 게시됨을 의미합니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;이 피드는 실시간 처리, 실시간 모니터링, 오프라인 처리 및보고를위한 Hadoop 또는 오프라인 데이터웨어 하우징 시스템으로의 로드를 포함하여 다양한 사용 사례에 대한 구독에 사용할 수 있습니다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;METRICS&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Kafka는 종종 운영 모니터링 데이터로 사용됩니다. 여기에는 분산 응용 프로그램의 통계를 집계하여 운영 데이터의 중앙 집중식 피드를 생성하는 작업이 포함됩니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;LOG AGGREGATION&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;많은 사람들이 Kafka를 로그 집계 솔루션 대신 사용합니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;로그 집계는 일반적으로 물리적 인 로그 파일을 서버에서 수집하여 처리를 위해 중앙 위치 (파일 서버 또는 HDFS 등)에 배치합니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Kafka는 파일의 세부 사항을 추상화하여 로그 또는 이벤트 데이터를 메시지 스트림으로보다 깔끔하게 추상화합니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;이를 통해 대기 시간이 더 낮은 처리가 가능하며 여러 데이터 소스 및 분산 된 데이터 소비를 보다 쉽게 지원할 수 있습니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Scribe 또는 Flume과 같은 로그 중심 시스템과 비교하여 카프카는 성능이 우수하고 복제로 내구성이 강화되었으며 엔드 투 엔드 대기 시간이 훨씬 낮습니다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;STREAM PROCESSING&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Kafka의 많은 사용자는 여러 단계로 구성된 처리 파이프 라인에서 데이터를 처리합니다. 여기에서는 원시 입력 데이터가 카프카 항목에서 소비 된 다음 추가 소비 또는 후속 처리를 위해 새로운 주제로 집계, 강화 또는 변환됩니다. 예를 들어, 뉴스 기사를 추천하는 처리 파이프 라인은 RSS 피드의 기사 내용을 크롤링하여 “기사”주제에 게시 할 수 있습니다. 추가 처리로이 컨텐츠를 정규화 또는 중복 제거하고 정리 된 기사 컨텐츠를 새 주제에 게시 할 수 있습니다. 최종 처리 단계에서이 내용을 사용자에게 권장하려고 시도 할 수 있습니다. 이러한 프로세싱 파이프 라인은 개별 주제를 기반으로 실시간 데이터 흐름의 그래프를 생성합니다. 0.10.0.0부터 시작하여, 가볍지 만 강력한 스트림 처리 라이브러리 인 Kafka Streams 는 Apache Kafka에서 위에서 설명한 데이터 처리를 수행 할 수 있습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;EVENT SOURCING&lt;/strong&gt;
+이벤트 소싱 은 상태 변경이 시간 순서로 기록 된 레코드 순서로 기록되는 응용 프로그램 디자인 스타일입니다. 매우 큰 저장된 로그 데이터에 대한 Kafka의 지원은이 스타일로 구축 된 응용 프로그램을위한 훌륭한 백엔드입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;COMMIT LOG&lt;/strong&gt;
+이벤트 소싱 은 상태 변경이 시간 순서로 기록 된 레코드 순서로 기록되는 응용 프로그램 디자인 스타일입니다. 매우 큰 저장된 로그 데이터에 대한 Kafka의 지원은이 스타일로 구축 된 응용 프로그램을위한 훌륭한 백엔드입니다.&lt;/p&gt;
 
 &lt;p&gt;관련소스 참조: &lt;a href=&quot;https://github.com/b329/springboot2.git&quot;&gt;B329’s GitHub repo&lt;/a&gt;.&lt;/p&gt;</content><author><name>4e65rv</name></author><category term="kafka" /><category term="kafka" /><summary type="html">Apache Kafka(아파치 카프카)는 LinkedIn에서 개발된 분산 메시징 시스템으로써 2011년에 오픈소스로 공개되었다. 대용량의 실시간 로그처리에 특화된 아키텍처 설계를 통하여 기존 메시징 시스템보다 우수한 TPS를 보여주고 있다.</summary></entry><entry><title type="html">[Kafka]카프카의 특징-1</title><link href="http://localhost:4000/kafka/kafka_1/" rel="alternate" type="text/html" title="[Kafka]카프카의 특징-1" /><published>2020-08-22T21:26:28+09:00</published><updated>2020-08-22T21:26:28+09:00</updated><id>http://localhost:4000/kafka/kafka_1</id><content type="html" xml:base="http://localhost:4000/kafka/kafka_1/">&lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;이 글은 카프카, 데이터 플랫폼의 최강자 고승범/공용준 님의 책을 공부하며
 정리하는 글입니다.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;INTRODUCTION&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;APACHE KAFKA ™는 분산 형 스트리밍 플랫폼 입니다. 그게 정확히 무슨 뜻입니까?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;우리는 스트리밍 플랫폼이 세 가지 핵심 기능을 가지고 있다고 생각합니다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;이를 통해 레코드 스트림을 게시하고 구독 할 수 있습니다. 이 점에서 메시지 큐 또는 엔터프라이즈 메시징 시스템과 유사합니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;내결함성있는 방식으로 레코드 스트림을 저장할 수 있습니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;발생하는 레코드 스트림을 처리 할 수 있습니다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;카프카는 무엇에 좋은가?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;그것은 두 가지 광범위한 종류의 응용 프로그램에 사용됩니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;시스템 또는 응용 프로그램간에 데이터를 안정적으로 얻는 실시간 스트리밍 데이터 파이프 라인 구축&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;데이터 스트림을 변환하거나 이에 반응하는 실시간 스트리밍 어플리케이션 구축&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;strong&gt;분산시스템&lt;/strong&gt;&lt;/p&gt;
@@ -56,6 +178,7 @@ APACHE KAFKA ™는 분산 형 스트리밍 플랫폼 입니다. 그게 정확�
   &lt;li&gt;배치 전송 처리
     &lt;ul&gt;
       &lt;li&gt;빈번한 I/O 발생은 속도 저하를 유발하는데, 배치 처리를 지원하여 오버헤드를 줄인다&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;/assets/images/kafka/kafka3-2.png&quot; alt=&quot;Image Alt 텍스트&quot; /&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -69,30 +192,31 @@ Autowired 가 없다.
 피하기 위해서이다.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;@RequiredArgsConstructor
-@Service
-public class PostsService {
-    private final PostsRepository postsRepository;
-    @Transactional
-    public Long save(PostsSaveRequestDto requestDto) {
-        return postsRepository.save(requestDto.toEntity()).getId();
-    }&lt;/p&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nd&quot;&gt;@RequiredArgsConstructor&lt;/span&gt;
+&lt;span class=&quot;nd&quot;&gt;@Service&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;PostsService&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;PostsRepository&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;postsRepository&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;@Transactional&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Long&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;save&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;PostsSaveRequestDto&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requestDto&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;postsRepository&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;save&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;requestDto&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;toEntity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@Transactional
-public Long update(Long id, PostsUpdateRequestDto requestDto) {
-    Posts posts = postsRepository.findById(id)
-            .orElseThrow(() -&amp;gt; new IllegalArgumentException(&quot;해당 게시글이 없습니다. id=&quot;+ id));
+    &lt;span class=&quot;nd&quot;&gt;@Transactional&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Long&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Long&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;PostsUpdateRequestDto&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requestDto&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nc&quot;&gt;Posts&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;posts&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;postsRepository&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;findById&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;orElseThrow&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;IllegalArgumentException&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;해당 게시글이 없습니다. id=&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
 
-    posts.update(requestDto.getTitle(), requestDto.getContent());
+        &lt;span class=&quot;n&quot;&gt;posts&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;requestDto&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getTitle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requestDto&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getContent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
 
-            return id;
-}
+                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 
-public PostsResponseDto findById(Long id) {
-    Posts entity = postsRepository.findById(id)
-            .orElseThrow(() -&amp;gt; new IllegalArgumentException(&quot;해당 게시글이 없습니다. id=&quot; + id));
-    return new PostsResponseDto(entity);
-} }
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;PostsResponseDto&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;findById&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Long&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nc&quot;&gt;Posts&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entity&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;postsRepository&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;findById&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;orElseThrow&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;IllegalArgumentException&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;해당 게시글이 없습니다. id=&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;PostsResponseDto&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;entity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;관련소스 참조: &lt;a href=&quot;https://github.com/b329/springboot2.git&quot;&gt;B329’s GitHub repo&lt;/a&gt;.&lt;/p&gt;</content><author><name>4e65rv</name></author><category term="springboot" /><category term="springboot" /><summary type="html">@Autowired 가 없는 이유는 빈을 주입받는 방식에 @Autowired setter 생성자 주입방식이 있는데 여기서는 Controller 와 Service 에서 lombok 의 @RequiredArgsConstructor 로 생성자 Bean 을 주입받기 때문에 Autowired 가 없다. 생성자를 직접 안쓰고 lombok 을 사용하는 이점은 해당 클래스의 의존성 관계가 변경될때마다 생성자코드를 계속해서 수정해야 하는 번거로움을 피하기 위해서이다.</summary></entry></feed>
