@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-08-23T16:20:00+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">안녕, 피츠버그 그리고 책</title><subtitle>기술블로그</subtitle><author><name>4e65rv</name></author><entry><title type="html">springboot-2.2 Init 세팅에 대한 기록</title><link href="http://localhost:4000/springboot/post/" rel="alternate" type="text/html" title="springboot-2.2 Init 세팅에 대한 기록" /><published>2020-08-22T21:26:28+09:00</published><updated>2020-08-22T21:26:28+09:00</updated><id>http://localhost:4000/springboot/post</id><content type="html" xml:base="http://localhost:4000/springboot/post/">&lt;p&gt;기본 springframework 을 만들면서 기록을 함께 해두기 위해 작성되었음.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-08-23T16:30:13+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">안녕, 피츠버그 그리고 책</title><subtitle>기술블로그</subtitle><author><name>4e65rv</name></author><entry><title type="html">springboot-2.2 Init 세팅에 대한 기록</title><link href="http://localhost:4000/springboot/post/" rel="alternate" type="text/html" title="springboot-2.2 Init 세팅에 대한 기록" /><published>2020-08-22T21:26:28+09:00</published><updated>2020-08-22T21:26:28+09:00</updated><id>http://localhost:4000/springboot/post</id><content type="html" xml:base="http://localhost:4000/springboot/post/">&lt;p&gt;기본 springframework 을 만들면서 기록을 함께 해두기 위해 작성되었음.
 아래 소스 링크를 참조하면 기본적으로 제작한 springboot 2.2.0 을 기반으로 작성한 소스코드를
 내려받고 실행해볼 수 있습니다.&lt;/p&gt;
 
@@ -13,14 +13,54 @@
 
 &lt;ul&gt;
   &lt;li&gt;Introduction
-APACHE KAFKA ™는 분산 형 스트리밍 플랫폼 입니다. 그게 정확히 무슨 뜻입니까?
-우리는 스트리밍 플랫폼이 세 가지 핵심 기능을 가지고 있다고 생각합니다.
-이를 통해 레코드 스트림을 게시하고 구독 할 수 있습니다. 이 점에서 메시지 큐 또는 엔터프라이즈 메시징 시스템과 유사합니다.
-내결함성있는 방식으로 레코드 스트림을 저장할 수 있습니다.
-발생하는 레코드 스트림을 처리 할 수 있습니다.&lt;/li&gt;
+APACHE KAFKA ™는 분산 형 스트리밍 플랫폼 입니다. 그게 정확히 무슨 뜻입니까?&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;관련소스 참조: &lt;a href=&quot;https://github.com/b329/springboot2.git&quot;&gt;B329’s GitHub repo&lt;/a&gt;.&lt;/p&gt;</content><author><name>4e65rv</name></author><category term="kafka" /><category term="kafka" /><summary type="html">Apache Kafka(아파치 카프카)는 LinkedIn에서 개발된 분산 메시징 시스템으로써 2011년에 오픈소스로 공개되었다. 대용량의 실시간 로그처리에 특화된 아키텍처 설계를 통하여 기존 메시징 시스템보다 우수한 TPS를 보여주고 있다.</summary></entry><entry><title type="html">@Autowired 가 없는 이유</title><link href="http://localhost:4000/springboot/autowired/" rel="alternate" type="text/html" title="@Autowired 가 없는 이유" /><published>2020-08-21T21:26:28+09:00</published><updated>2020-08-21T21:26:28+09:00</updated><id>http://localhost:4000/springboot/autowired</id><content type="html" xml:base="http://localhost:4000/springboot/autowired/">&lt;p&gt;@Autowired 가 없는 이유는 빈을 주입받는 방식에
+&lt;p&gt;우리는 스트리밍 플랫폼이 세 가지 핵심 기능을 가지고 있다고 생각합니다.
+이를 통해 레코드 스트림을 게시하고 구독 할 수 있습니다. 이 점에서 메시지 큐 또는 엔터프라이즈 메시징 시스템과 유사합니다.
+내결함성있는 방식으로 레코드 스트림을 저장할 수 있습니다.
+발생하는 레코드 스트림을 처리 할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;관련소스 참조: &lt;a href=&quot;https://github.com/b329/springboot2.git&quot;&gt;B329’s GitHub repo&lt;/a&gt;.&lt;/p&gt;</content><author><name>4e65rv</name></author><category term="kafka" /><category term="kafka" /><summary type="html">Apache Kafka(아파치 카프카)는 LinkedIn에서 개발된 분산 메시징 시스템으로써 2011년에 오픈소스로 공개되었다. 대용량의 실시간 로그처리에 특화된 아키텍처 설계를 통하여 기존 메시징 시스템보다 우수한 TPS를 보여주고 있다.</summary></entry><entry><title type="html">[Kafka]카프카의 특징-1</title><link href="http://localhost:4000/kafka/kafka_1/" rel="alternate" type="text/html" title="[Kafka]카프카의 특징-1" /><published>2020-08-22T21:26:28+09:00</published><updated>2020-08-22T21:26:28+09:00</updated><id>http://localhost:4000/kafka/kafka_1</id><content type="html" xml:base="http://localhost:4000/kafka/kafka_1/">&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;이 글은 카프카, 데이터 플랫폼의 최강자 고승범/공용준 님의 책을 공부하며
+정리하는 글입니다.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;분산시스템&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;단일 시스템보다 더 높은 성능
+    &lt;ul&gt;
+      &lt;li&gt;하나의 시스템이 초당 1000개의 메세지로 cpu 100% 사용한다면 초당 900은 90% CPU 사용량이다&lt;/li&gt;
+      &lt;li&gt;만약 서버 한대를 추가하면 CPU 사용량(대당)이 45% 수준이 된다.&lt;/li&gt;
+      &lt;li&gt;초당 처리 할 메시지양과 그에 따른 CPU 사용량을 고려해 브로커 수를 증감하면 된다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;분산 시스템 중 하나의 서버 또는 노드 등이 장애가 발생하면 다른 서버 또는 노드가 대신처리
+카프카는 리플리케이션을 지원한다.
+    &lt;ul&gt;
+      &lt;li&gt;토픽은 여러 개의 파티션으로 나뉘어 있고, 브로커에는 여러개의 파티션이 존재함&lt;/li&gt;
+      &lt;li&gt;각 파티션마다 리플리케이션이 동작(하나는 파티션의 리더, 나머지는 파티션의 팔로워)&lt;/li&gt;
+      &lt;li&gt;자세한 복구 매커니즘은 아래에서 설명.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;시스템 확장이 용이하다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;페이지 캐시
+    &lt;ul&gt;
+      &lt;li&gt;OS는 물리적 메모리에 애플리케이션 부분을 할당하고 남은 잔여 메모리를 페이지 캐시로 유지하여 성능을 높인다&lt;/li&gt;
+      &lt;li&gt;이런 잔여메모리를 디스크에 읽고 쓰기에 사용하지 않고, 페이지 캐시를 통해 읽고 쓰는 방식을 사용해 처리속도를 높였다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;배치 전송 처리
+    &lt;ul&gt;
+      &lt;li&gt;빈번한 I/O 발생은 속도 저하를 유발하는데, 배치 처리를 지원하여 오버헤드를 줄인다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;관련소스 참조: &lt;a href=&quot;https://github.com/b329/springboot2.git&quot;&gt;B329’s GitHub repo&lt;/a&gt;.&lt;/p&gt;</content><author><name>4e65rv</name></author><category term="kafka" /><category term="kafka" /><summary type="html">이 글은 카프카, 데이터 플랫폼의 최강자 고승범/공용준 님의 책을 공부하며 정리하는 글입니다.</summary></entry><entry><title type="html">@Autowired 가 없는 이유</title><link href="http://localhost:4000/springboot/autowired/" rel="alternate" type="text/html" title="@Autowired 가 없는 이유" /><published>2020-08-21T21:26:28+09:00</published><updated>2020-08-21T21:26:28+09:00</updated><id>http://localhost:4000/springboot/autowired</id><content type="html" xml:base="http://localhost:4000/springboot/autowired/">&lt;p&gt;@Autowired 가 없는 이유는 빈을 주입받는 방식에
 @Autowired setter 생성자 주입방식이 있는데
 여기서는 Controller 와 Service 에서 lombok 의 @RequiredArgsConstructor 로 생성자 Bean 을 주입받기 때문에
 Autowired 가 없다.

@@ -22,4 +22,10 @@ var store = [{
         "tags": ["kafka"],
         "url": "http://localhost:4000/kafka/kafka/",
         "teaser": "http://localhost:4000/assets/images/500x300.png"
+      },{
+        "title": "[Kafka]카프카의 특징-1",
+        "excerpt":"이 글은 카프카, 데이터 플랫폼의 최강자 고승범/공용준 님의 책을 공부하며 정리하는 글입니다. 분산시스템 단일 시스템보다 더 높은 성능 하나의 시스템이 초당 1000개의 메세지로 cpu 100% 사용한다면 초당 900은 90% CPU 사용량이다 만약 서버 한대를 추가하면 CPU 사용량(대당)이 45% 수준이 된다. 초당 처리 할 메시지양과 그에 따른 CPU 사용량을 고려해 브로커...","categories": ["kafka"],
+        "tags": ["kafka"],
+        "url": "http://localhost:4000/kafka/kafka_1/",
+        "teaser": "http://localhost:4000/assets/images/500x300.png"
       }]
