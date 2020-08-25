@@ -1,0 +1,881 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.20.1 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[Kafka]카프카 설치 - #1 - 안녕, 피츠버그 그리고 책</title>
+<meta name="description" content="Kafka 의 간단한 producer 와 consumer 의 작동 테스트 on mac">
+
+
+  <meta name="author" content="B329' Blog">
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="안녕, 피츠버그 그리고 책">
+<meta property="og:title" content="[Kafka]카프카 설치 - #1">
+<meta property="og:url" content="http://localhost:4000/kafka/kafka_do_1/">
+
+
+  <meta property="og:description" content="Kafka 의 간단한 producer 와 consumer 의 작동 테스트 on mac">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2020-08-22T21:26:28+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/kafka/kafka_do_1/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "b329's",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="안녕, 피츠버그 그리고 책 Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/88x88.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          삽질보단 개발을
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="http://localhost:4000/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/kafka" itemprop="item"><span itemprop="name">Kafka</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">[Kafka]카프카 설치 - #1</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/bio-photo.jpg" alt="B329' Blog" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">B329' Blog</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p><strong>MBTI :</strong> INTP</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">I'm from nowhere</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[Kafka]카프카 설치 - #1">
+    <meta itemprop="description" content="  Kafka 의 간단한 producer 와 consumer 의 작동 테스트 on mac">
+    <meta itemprop="datePublished" content="2020-08-22T21:26:28+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">[Kafka]카프카 설치 - #1
+</h1>
+          
+
+
+  <p class="page__meta">
+
+    
+      
+      <i class="far fa-calendar-alt" aria-hidden="true"></i>
+      <time datetime="2020-08-22T21:26:28+09:00">August 22, 2020</time>
+    
+
+    
+      
+      <span class="post__meta-sep"></span>
+      
+    
+
+    
+      
+      
+
+      <i class="far fa-clock" aria-hidden="true"></i>
+      
+        2 분 소요
+      
+    
+
+  </p>
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <ul>
+  <li><strong>Kafka 의 간단한 producer 와 consumer 의 작동 테스트 on mac</strong></li>
+</ul>
+
+<p><strong>-Kafka cluster 설치</strong></p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">    brew install wget
+    wget http://apache.mirror.cdnetworks.com/kafka/2.6.0/kafka_2.13-2.6.0.tgz
+    tar -zxvf kafka_2.13-2.6.0.tgz 
+    cd kafka_2.13-2.6.0
+</span></code></pre></div></div>
+
+<p><strong>-주키퍼 실행</strong></p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">cd bin
+./zookeeper-server-start.sh ../config/zookeeper.properties &amp;
+</span></code></pre></div></div>
+
+<p><strong>-주키퍼 실행</strong></p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">cd bin
+./zookeeper-server-start.sh ../config/zookeeper.properties &amp;
+</span></code></pre></div></div>
+
+<p><strong>-카프카 브로커 실행</strong></p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">./kafka-server-start.sh ../config/server.properties &amp;
+</span></code></pre></div></div>
+
+<ul>
+  <li>하나의 zookeeper 에 여러대의 kafka cluster 를 실행하고 싶을때
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go"> vi server.properties 
+ 
+ 파일을 열면 아래와 같은 부분이 나오게 되는데 여기서 다음 두가지 사항을 변경시켜준다.
+ 3개의 cluster 를 돌리고 싶다면 세개의 파일을 만들어주고 각각 실행을 시켜준다.
+ server.properties , server1.properties ,server2.properties 
+   
+ : server.properties 
+    broker.id=0
+    listeners=PLAINTEXT://:9092
+ : server1.properties 
+    broker.id=1
+    listeners=PLAINTEXT://:9093
+ : server2.properties 
+    broker.id=2
+    listeners=PLAINTEXT://:9094
+
+ .... vi 에디터로 열오놓은 내용
+</span><span class="gp"> #</span><span class="c">############################ Server Basics #############################</span>
+<span class="go">   
+</span><span class="gp"> #</span><span class="w"> </span>The <span class="nb">id </span>of the broker. This must be <span class="nb">set </span>to a unique integer <span class="k">for </span>each broker.
+<span class="go"> broker.id=1
+   
+</span><span class="gp"> #</span><span class="c">############################ Socket Server Settings #############################</span>
+<span class="go">   
+</span><span class="gp"> #</span><span class="w"> </span>The address the socket server listens on. It will get the value returned from 
+<span class="gp"> #</span><span class="w"> </span>java.net.InetAddress.getCanonicalHostName<span class="o">()</span> <span class="k">if </span>not configured.
+<span class="gp"> #</span><span class="w">   </span>FORMAT:
+<span class="gp"> #</span><span class="w">     </span>listeners <span class="o">=</span> listener_name://host_name:port
+<span class="gp"> #</span><span class="w">   </span>EXAMPLE:
+<span class="gp"> #</span><span class="w">     </span>listeners <span class="o">=</span> PLAINTEXT://your.host.name:9092
+<span class="go"> listeners=PLAINTEXT://:9093
+</span><span class="c"> ....
+</span><span class="go">
+위에서 생성한 3개의 kafka cluster 를 실행시켜준다.
+ ./kafka-server-start.sh ../config/server.properties &amp;
+ ./kafka-server-start.sh ../config/server1.properties &amp;
+ ./kafka-server-start.sh ../config/server2.properties &amp;
+</span></code></pre></div>    </div>
+  </li>
+</ul>
+
+<p><strong>-카프카 토픽 만들기</strong></p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">./kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test
+
+</span><span class="gp">b329:bin $</span><span class="w"> </span>./kafka-topics.sh <span class="nt">--create</span> <span class="nt">--zookeeper</span> localhost:2181 <span class="nt">--replication-factor</span> 1 <span class="nt">--partitions</span> 1 <span class="nt">--topic</span> <span class="nb">test</span>
+<span class="go">Created topic test.
+</span></code></pre></div></div>
+
+<p><strong>-카프카 producer실행</strong></p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">./kafka-console-producer.sh --broker-list localhost:9092 --topic test
+</span><span class="gp">&gt;</span>This is <span class="nb">test </span><span class="k">for </span><span class="nb">local </span>kafka producer..
+<span class="gp">&gt;</span>second <span class="nb">test</span> 
+<span class="gp">&gt;</span>this is third <span class="nb">test</span>
+</code></pre></div></div>
+
+<p><strong>-카프카 consumer 실행</strong></p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">./kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --from-beginning
+This is test for local kafka producer..
+second test
+this is third test
+</span></code></pre></div></div>
+
+<p><strong>-Topic operation</strong></p>
+
+<p>-Topic 생성</p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">  bin/kafka-topics.sh --create --zookeeper 127.0.0.1:2181 --replication-factor 3 --partitions 1 --topic PayLog
+  bin/kafka-topics.sh --create --zookeeper 127.0.0.1:2181 --replication-factor 3 --partitions 1 --topic buyingLog
+  bin/kafka-topics.sh --create --zookeeper 127.0.0.1:2181 --replication-factor 3 --partitions 1 --topic sellerLog
+  
+</span><span class="gp">  b329-MacBookPro:kafka_2.13-2.6.0 b329$</span><span class="w"> </span>bin/kafka-topics.sh <span class="nt">--create</span> <span class="nt">--zookeeper</span> 127.0.0.1:2181 <span class="nt">--replication-factor</span> 3 <span class="nt">--partitions</span> 1 <span class="nt">--topic</span> PayLog
+<span class="go">  Created topic PayLog.
+</span><span class="gp">  b329-MacBookPro:kafka_2.13-2.6.0 b329$</span><span class="w"> </span>bin/kafka-topics.sh <span class="nt">--create</span> <span class="nt">--zookeeper</span> 127.0.0.1:2181 <span class="nt">--replication-factor</span> 3 <span class="nt">--partitions</span> 1 <span class="nt">--topic</span> buyingLog
+<span class="go">  Created topic buyingLog.
+</span><span class="gp">  b329-MacBookPro:kafka_2.13-2.6.0 b329$</span><span class="w"> </span>bin/kafka-topics.sh <span class="nt">--create</span> <span class="nt">--zookeeper</span> 127.0.0.1:2181 <span class="nt">--replication-factor</span> 3 <span class="nt">--partitions</span> 1 <span class="nt">--topic</span> sellerLog
+<span class="go">  Created topic sellerLog.
+</span><span class="gp">  b329-MacBookPro:kafka_2.13-2.6.0 b329$</span><span class="w"> 
+</span></code></pre></div></div>
+
+<p>-Topic 리스트 확인</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">  bin/kafka-topics.sh --list --zookeeper 127.0.0.1:2181
+
+</span><span class="gp">  b329-MacBookPro:kafka_2.13-2.6.0 b329$</span><span class="w"> </span>bin/kafka-topics.sh <span class="nt">--list</span> <span class="nt">--zookeeper</span> 127.0.0.1:2181
+<span class="go">  PayLog
+  __consumer_offsets
+  buyingLog
+  sellerLog
+</span></code></pre></div></div>
+
+<p>-Topic 삭제</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">  $</span><span class="w"> </span>bin/kafka-topics.sh <span class="nt">--delete</span> <span class="nt">--zookeeper</span> 127.0.0.1:2181 <span class="nt">--topic</span> <span class="nb">test</span>
+<span class="go">  
+</span><span class="gp">  b329-MacBookPro:kafka_2.13-2.6.0 b329$</span><span class="w"> </span>bin/kafka-topics.sh <span class="nt">--delete</span> <span class="nt">--zookeeper</span> 127.0.0.1:2181 <span class="nt">--topic</span> <span class="nb">test</span>
+<span class="go">  Topic test is marked for deletion.
+  Note: This will have no impact if delete.topic.enable is not set to true.
+</span></code></pre></div></div>
+
+<p>-Topic 상세정보 확인</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">  $</span><span class="w"> </span>bin/kafka-topics.sh <span class="nt">--describe</span> <span class="nt">--zookeeper</span> 127.0.0.1:2181
+<span class="go">  
+  bin/kafka-topics.sh --describe --zookeeper 127.0.0.1:2181
+  Topic: PayLog		PartitionCount: 1	ReplicationFactor: 3	Configs: 
+  Topic: PayLog		Partition: 0		Leader: 2		Replicas: 2,0,1	Isr: 2,0,1
+  Topic: buyingLog	PartitionCount: 1	ReplicationFactor: 3	Configs: 
+  Topic: buyingLog	Partition: 0		Leader: 1		Replicas: 1,2,0	Isr: 1,2,0
+  Topic: sellerLog	PartitionCount: 1	ReplicationFactor: 3	Configs: 
+  Topic: sellerLog	Partition: 0		Leader: 0		Replicas: 0,1,2	Isr: 0,1,2
+</span></code></pre></div></div>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/kafka" class="page__taxonomy-item" rel="tag">kafka</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/kafka" class="page__taxonomy-item" rel="tag">kafka</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2020-08-22T21:26:28+09:00">August 22, 2020</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5BKafka%5D%EC%B9%B4%ED%94%84%EC%B9%B4+%EC%84%A4%EC%B9%98+-+%231%20http%3A%2F%2Flocalhost%3A4000%2Fkafka%2Fkafka_do_1%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fkafka%2Fkafka_do_1%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fkafka%2Fkafka_do_1%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/kafka/kafka_1/" class="pagination--pager" title="[Kafka]카프카의 특징-1
+">이전</a>
+    
+    
+      <a href="/kafka/kafka_do_2/" class="pagination--pager" title="[Kafka]카프카 메세지 producer 과 consumer - #2
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">참고</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/500x300.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/kafka/kafka_do_2/" rel="permalink">[Kafka]카프카 메세지 producer 과 consumer - #2
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+
+    
+      
+      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+      <time datetime="2020-08-22T21:26:28+09:00">August 22, 2020</time>
+    
+
+    
+      
+        <br \>
+      
+    
+
+    
+      
+      
+
+      <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+      
+        최대 1 분 소요
+      
+    
+
+  </p>
+
+    <p class="archive__item-excerpt" itemprop="description">-Producer 메세지 생산하기
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/500x300.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/kafka/kafka_1/" rel="permalink">[Kafka]카프카의 특징-1
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+
+    
+      
+      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+      <time datetime="2020-08-22T21:26:28+09:00">August 22, 2020</time>
+    
+
+    
+      
+        <br \>
+      
+    
+
+    
+      
+      
+
+      <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+      
+        1 분 소요
+      
+    
+
+  </p>
+
+    <p class="archive__item-excerpt" itemprop="description">
+  이 글은 카프카, 데이터 플랫폼의 최강자 고승범/공용준 님의 책을 공부하며
+정리하는 글입니다.
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/500x300.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/kafka/kafka/" rel="permalink">Kafka 개요
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+
+    
+      
+      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+      <time datetime="2020-08-22T21:26:28+09:00">August 22, 2020</time>
+    
+
+    
+      
+        <br \>
+      
+    
+
+    
+      
+      
+
+      <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+      
+        2 분 소요
+      
+    
+
+  </p>
+
+    <p class="archive__item-excerpt" itemprop="description">Apache Kafka(아파치 카프카)는 LinkedIn에서 개발된 분산 메시징 시스템으로써 2011년에 오픈소스로 공개되었다.
+대용량의 실시간 로그처리에 특화된 아키텍처 설계를 통하여 기존 메시징 시스템보다 우수한 TPS를 보여주고 있다.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/500x300.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/springboot/post/" rel="permalink">springboot-2.2 Init 세팅에 대한 기록
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+
+    
+      
+      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+      <time datetime="2020-08-22T21:26:28+09:00">August 22, 2020</time>
+    
+
+    
+      
+        <br \>
+      
+    
+
+    
+      
+      
+
+      <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+      
+        최대 1 분 소요
+      
+    
+
+  </p>
+
+    <p class="archive__item-excerpt" itemprop="description">기본 springframework 을 만들면서 기록을 함께 해두기 위해 작성되었음.
+아래 소스 링크를 참조하면 기본적으로 제작한 springboot 2.2.0 을 기반으로 작성한 소스코드를
+내려받고 실행해볼 수 있습니다.
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2020 b329's. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+
+  
+
+
+
+
+
+  </body>
+</html>

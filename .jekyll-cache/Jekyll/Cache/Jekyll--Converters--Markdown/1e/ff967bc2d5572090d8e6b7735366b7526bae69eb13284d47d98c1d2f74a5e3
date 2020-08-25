@@ -1,0 +1,31 @@
+I"L<p><strong>-Producer 메세지 생산하기</strong></p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>bin/kafka-console-producer.sh <span class="nt">--broker-list</span> 127.0.0.1:9092, 127.0.0.1:9093, 127.0.0.1:9094 <span class="nt">--topic</span> PayLog
+<span class="gp">&gt;</span>login buyer
+<span class="gp">&gt;</span>searching product    
+<span class="gp">&gt;</span>finding Tods
+<span class="gp">&gt;</span>pay price
+<span class="gp">&gt;</span>completed buying 
+<span class="gp">&gt;</span><span class="nb">logout</span> 
+<span class="gp">&gt;</span><span class="w">
+</span></code></pre></div></div>
+
+<p><strong>-Consumer 메세지 소비하기</strong></p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>bin/kafka-console-consumer.sh <span class="nt">--bootstrap-server</span> 127.0.0.1:9092, 127.0.0.1:9093, 127.0.0.1:9094 <span class="nt">--topic</span> PayLog <span class="nt">--from-beginning</span>
+<span class="go">
+</span><span class="gp">b329-MacBookPro:kafka_2.13-2.6.0 b329$</span><span class="w"> </span>bin/kafka-console-consumer.sh <span class="nt">--bootstrap-server</span> 127.0.0.1:9092, 127.0.0.1:9093, 127.0.0.1:9094 <span class="nt">--topic</span> PayLog <span class="nt">--from-beginning</span>
+<span class="go">login buyer
+searching product
+finding Tods
+pay price
+completed buying
+logout
+</span></code></pre></div></div>
+
+<ul>
+  <li>from-beginning 옵션은 해당 topic의 맨 처음 메시지부터 소비(consuming)하겠다는 의미이다.
+위의 console 에서는 Producer에서 메시지를 생산(producing)하고나서 Consumer에서 해당 메시지를 읽어(consuming)오는 것을 확인 할 수 있다.</li>
+</ul>
+
+:ET
