@@ -28,4 +28,16 @@ var store = [{
         "tags": ["kafka"],
         "url": "http://localhost:4000/kafka/kafka_1/",
         "teaser": "http://localhost:4000/assets/images/500x300.png"
+      },{
+        "title": "[Kafka]카프카 설치 - #1",
+        "excerpt":"Kafka 의 간단한 producer 와 consumer 의 작동 테스트 on mac -Kafka cluster 설치 brew install wget wget http://apache.mirror.cdnetworks.com/kafka/2.6.0/kafka_2.13-2.6.0.tgz tar -zxvf kafka_2.13-2.6.0.tgz cd kafka_2.13-2.6.0 -주키퍼 실행 cd bin ./zookeeper-server-start.sh ../config/zookeeper.properties &amp; -주키퍼 실행 cd bin ./zookeeper-server-start.sh ../config/zookeeper.properties &amp; -카프카 브로커 실행 ./kafka-server-start.sh ../config/server.properties &amp; 하나의 zookeeper 에 여러대의 kafka cluster...","categories": ["kafka"],
+        "tags": ["kafka"],
+        "url": "http://localhost:4000/kafka/kafka_do_1/",
+        "teaser": "http://localhost:4000/assets/images/500x300.png"
+      },{
+        "title": "[Kafka]카프카 메세지 producer 과 consumer - #2",
+        "excerpt":"-Producer 메세지 생산하기 $ bin/kafka-console-producer.sh --broker-list 127.0.0.1:9092, 127.0.0.1:9093, 127.0.0.1:9094 --topic PayLog &gt;login buyer &gt;searching product &gt;finding Tods &gt;pay price &gt;completed buying &gt;logout &gt; -Consumer 메세지 소비하기 $ bin/kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092, 127.0.0.1:9093, 127.0.0.1:9094 --topic PayLog --from-beginning b329-MacBookPro:kafka_2.13-2.6.0 b329$ bin/kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092, 127.0.0.1:9093, 127.0.0.1:9094 --topic PayLog --from-beginning login buyer searching product finding...","categories": ["kafka"],
+        "tags": ["kafka"],
+        "url": "http://localhost:4000/kafka/kafka_do_2/",
+        "teaser": "http://localhost:4000/assets/images/500x300.png"
       }]

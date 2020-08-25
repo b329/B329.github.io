@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>http://localhost:4000/portfolio/portfolio/</loc>
-<lastmod>2020-08-24T12:24:53+09:00</lastmod>
+<lastmod>2020-08-25T17:26:00+09:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/springboot/autowired/</loc>
@@ -18,6 +18,14 @@
 </url>
 <url>
 <loc>http://localhost:4000/kafka/kafka_1/</loc>
+<lastmod>2020-08-22T21:26:28+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/kafka/kafka_do_1/</loc>
+<lastmod>2020-08-22T21:26:28+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/kafka/kafka_do_2/</loc>
 <lastmod>2020-08-22T21:26:28+09:00</lastmod>
 </url>
 <url>
@@ -37,5 +45,8 @@
 </url>
 <url>
 <loc>http://localhost:4000/categories/kafka/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page2/</loc>
 </url>
 </urlset>
