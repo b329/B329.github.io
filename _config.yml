@@ -19,7 +19,7 @@ locale                   : "ko-KR"
 title                    : "안녕, 피츠버그 그리고 책"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "4e65rv"
+name                     : "b329's"
 description              : "기술블로그"
 url                      : "https://b329.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : ""# the subpath of your site, e.g. "/blog"
@@ -93,7 +93,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "4e65rv"
+  name             : "B329' Blog"
   avatar           : "/assets/images/bio-photo.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "**MBTI :** INTP" # "I am an **amazing** person."
   location         : "I'm from nowhere"
