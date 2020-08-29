@@ -1,8 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://localhost:4000/portfolio/2020-08-23-autowired/</loc>
+<lastmod>2020-08-21T21:26:28+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/portfolio/portfolio/</loc>
 <lastmod>2020-08-21T21:26:28+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/portfolio/2020-08-22-post/</loc>
+<lastmod>2020-08-22T21:26:28+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/portfolio/2020-08-23-kafka/</loc>
+<lastmod>2020-08-22T21:26:28+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/portfolio/2020-08-23-kafka_1/</loc>
+<lastmod>2020-08-22T21:26:28+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/portfolio/2020-08-24-kafka_do_1/</loc>
+<lastmod>2020-08-22T21:26:28+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/portfolio/2020-08-24-kafka_do_2/</loc>
+<lastmod>2020-08-22T21:26:28+09:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/springboot/autowired/</loc>
