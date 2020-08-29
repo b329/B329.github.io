@@ -5,7 +5,7 @@
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # `jekyll serve`. If you change this file, please restart the server process.
 
-# Theme Settings
+# Theme Settingsƒ500
 #
 # Review documentation to determine if you should use `theme` or `remote_theme`
 # https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
@@ -26,7 +26,7 @@ description              : "기술블로그"
 url                      : "https://b329.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : ""# the subpath of your site, e.g. "/blog"
 repository               : "b329/springboot2"# GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
-teaser                   : "/assets/images/500x300.png" # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : "/assets/images/88x88.png" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : "삽질보단 개발을"# overrides the website title displayed in the masthead, use " " for no title
 breadcrumbs            : true # true, false (default)
@@ -272,7 +272,7 @@ defaults:
   # _posts
   - scope:
       path: ""
-      type: portfolio
+      type: posts
     values:
       show_date: true
       read_time: true
