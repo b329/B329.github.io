@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: '/category'
+permalink: '/categories'
 ---
 
 <div class="category-wrap">
