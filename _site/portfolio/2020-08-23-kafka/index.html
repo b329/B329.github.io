@@ -1,0 +1,480 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.20.1 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Kafka 개요 - 기술블로그</title>
+<meta name="description" content="Apache Kafka(아파치 카프카)는 LinkedIn에서 개발된 분산 메시징 시스템으로써 2011년에 오픈소스로 공개되었다. 대용량의 실시간 로그처리에 특화된 아키텍처 설계를 통하여 기존 메시징 시스템보다 우수한 TPS를 보여주고 있다.">
+
+
+  <meta name="author" content="b329' blog">
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="기술블로그">
+<meta property="og:title" content="Kafka 개요">
+<meta property="og:url" content="http://localhost:4000/portfolio/2020-08-23-kafka/">
+
+
+  <meta property="og:description" content="Apache Kafka(아파치 카프카)는 LinkedIn에서 개발된 분산 메시징 시스템으로써 2011년에 오픈소스로 공개되었다. 대용량의 실시간 로그처리에 특화된 아키텍처 설계를 통하여 기존 메시징 시스템보다 우수한 TPS를 보여주고 있다.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2020-08-22T21:26:28+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/portfolio/2020-08-23-kafka/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "b329's",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="기술블로그 Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/88x88.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          삽질보단 개발을
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/portfolio">Collections</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="http://localhost:4000/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/portfolio" itemprop="item"><span itemprop="name">Portfolio</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">Kafka 개요</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Kafka 개요">
+    <meta itemprop="description" content="Apache Kafka(아파치 카프카)는 LinkedIn에서 개발된 분산 메시징 시스템으로써 2011년에 오픈소스로 공개되었다.대용량의 실시간 로그처리에 특화된 아키텍처 설계를 통하여 기존 메시징 시스템보다 우수한 TPS를 보여주고 있다.">
+    <meta itemprop="datePublished" content="2020-08-22T21:26:28+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Kafka 개요
+</h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>Apache Kafka(아파치 카프카)는 LinkedIn에서 개발된 분산 메시징 시스템으로써 2011년에 오픈소스로 공개되었다.
+대용량의 실시간 로그처리에 특화된 아키텍처 설계를 통하여 기존 메시징 시스템보다 우수한 TPS를 보여주고 있다.</p>
+
+<p><strong>INTRODUCTION</strong></p>
+
+<p><strong>APACHE KAFKA ™는 분산 형 스트리밍 플랫폼 입니다. 그게 정확히 무슨 뜻입니까?</strong></p>
+
+<p>우리는 스트리밍 플랫폼이 세 가지 핵심 기능을 가지고 있다고 생각합니다.</p>
+
+<ol>
+  <li>
+    <p>이를 통해 레코드 스트림을 게시하고 구독 할 수 있습니다. 이 점에서 메시지 큐 또는 엔터프라이즈 메시징 시스템과 유사합니다.</p>
+  </li>
+  <li>
+    <p>내결함성있는 방식으로 레코드 스트림을 저장할 수 있습니다.</p>
+  </li>
+  <li>
+    <p>발생하는 레코드 스트림을 처리 할 수 있습니다.</p>
+  </li>
+</ol>
+
+<p><strong>카프카는 무엇에 좋은가?</strong></p>
+
+<ul>
+  <li>
+    <p>그것은 두 가지 광범위한 종류의 응용 프로그램에 사용됩니다.</p>
+  </li>
+  <li>
+    <p>시스템 또는 응용 프로그램간에 데이터를 안정적으로 얻는 실시간 스트리밍 데이터 파이프 라인 구축</p>
+  </li>
+  <li>
+    <p>데이터 스트림을 변환하거나 이에 반응하는 실시간 스트리밍 어플리케이션 구축</p>
+  </li>
+</ul>
+
+<p><strong>USE CASES</strong></p>
+
+<p>https://kafka.apache.org/uses</p>
+
+<p><strong>MESSAGING</strong></p>
+<ul>
+  <li>
+    <p>카프카는보다 전통적인 메시지 브로커를 대신하여 잘 작동합니다.</p>
+  </li>
+  <li>
+    <p>메시지 브로커는 다양한 이유로 사용됩니다 (데이터 생성자에서 처리를 분리하고 처리되지 않은 메시지를 버퍼링하는 등).</p>
+  </li>
+  <li>
+    <p>대부분의 메시징 시스템과 비교하여, Kafka는 뛰어난 처리량, 기본 제공 파티셔닝, 복제 및 내결함성을 갖추고 있어 대규모 메시지 처리 응용 프로그램에 적합한 솔루션입니다.</p>
+  </li>
+</ul>
+
+<p><strong>WEBSITE ACTIVITY TRACKING</strong></p>
+<ul>
+  <li>
+    <p>Kafka의 원래의 사용 사례는 사용자 활동 추적 파이프 라인을 실시간 게시 - 구독 피드 집합으로 재구성 할 수 있어야했습니다.</p>
+  </li>
+  <li>
+    <p>이는 사이트 활동 (페이지 조회수, 검색 또는 사용자가 취할 수있는 기타 작업)이 활동 유형별로 하나의 주제와 함께 중앙 주제에 게시됨을 의미합니다.</p>
+  </li>
+  <li>
+    <p>이 피드는 실시간 처리, 실시간 모니터링, 오프라인 처리 및보고를위한 Hadoop 또는 오프라인 데이터웨어 하우징 시스템으로의 로드를 포함하여 다양한 사용 사례에 대한 구독에 사용할 수 있습니다.</p>
+  </li>
+</ul>
+
+<p><strong>METRICS</strong></p>
+
+<ul>
+  <li>Kafka는 종종 운영 모니터링 데이터로 사용됩니다. 여기에는 분산 응용 프로그램의 통계를 집계하여 운영 데이터의 중앙 집중식 피드를 생성하는 작업이 포함됩니다.</li>
+</ul>
+
+<p><strong>LOG AGGREGATION</strong></p>
+
+<ul>
+  <li>
+    <p>많은 사람들이 Kafka를 로그 집계 솔루션 대신 사용합니다.</p>
+  </li>
+  <li>
+    <p>로그 집계는 일반적으로 물리적 인 로그 파일을 서버에서 수집하여 처리를 위해 중앙 위치 (파일 서버 또는 HDFS 등)에 배치합니다.</p>
+  </li>
+  <li>
+    <p>Kafka는 파일의 세부 사항을 추상화하여 로그 또는 이벤트 데이터를 메시지 스트림으로보다 깔끔하게 추상화합니다.</p>
+  </li>
+  <li>
+    <p>이를 통해 대기 시간이 더 낮은 처리가 가능하며 여러 데이터 소스 및 분산 된 데이터 소비를 보다 쉽게 지원할 수 있습니다.</p>
+  </li>
+  <li>
+    <p>Scribe 또는 Flume과 같은 로그 중심 시스템과 비교하여 카프카는 성능이 우수하고 복제로 내구성이 강화되었으며 엔드 투 엔드 대기 시간이 훨씬 낮습니다.</p>
+  </li>
+</ul>
+
+<p><strong>STREAM PROCESSING</strong></p>
+
+<ul>
+  <li>Kafka의 많은 사용자는 여러 단계로 구성된 처리 파이프 라인에서 데이터를 처리합니다. 여기에서는 원시 입력 데이터가 카프카 항목에서 소비 된 다음 추가 소비 또는 후속 처리를 위해 새로운 주제로 집계, 강화 또는 변환됩니다. 예를 들어, 뉴스 기사를 추천하는 처리 파이프 라인은 RSS 피드의 기사 내용을 크롤링하여 “기사”주제에 게시 할 수 있습니다. 추가 처리로이 컨텐츠를 정규화 또는 중복 제거하고 정리 된 기사 컨텐츠를 새 주제에 게시 할 수 있습니다. 최종 처리 단계에서이 내용을 사용자에게 권장하려고 시도 할 수 있습니다. 이러한 프로세싱 파이프 라인은 개별 주제를 기반으로 실시간 데이터 흐름의 그래프를 생성합니다. 0.10.0.0부터 시작하여, 가볍지 만 강력한 스트림 처리 라이브러리 인 Kafka Streams 는 Apache Kafka에서 위에서 설명한 데이터 처리를 수행 할 수 있습니다.</li>
+</ul>
+
+<p><strong>EVENT SOURCING</strong>
+이벤트 소싱 은 상태 변경이 시간 순서로 기록 된 레코드 순서로 기록되는 응용 프로그램 디자인 스타일입니다. 매우 큰 저장된 로그 데이터에 대한 Kafka의 지원은이 스타일로 구축 된 응용 프로그램을위한 훌륭한 백엔드입니다.</p>
+
+<p><strong>COMMIT LOG</strong>
+이벤트 소싱 은 상태 변경이 시간 순서로 기록 된 레코드 순서로 기록되는 응용 프로그램 디자인 스타일입니다. 매우 큰 저장된 로그 데이터에 대한 Kafka의 지원은이 스타일로 구축 된 응용 프로그램을위한 훌륭한 백엔드입니다.</p>
+
+<p>관련소스 참조: <a href="https://github.com/b329/springboot2.git">B329’s GitHub repo</a>.</p>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/kafka" class="page__taxonomy-item" rel="tag">kafka</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/kafka" class="page__taxonomy-item" rel="tag">kafka</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2020-08-22T21:26:28+09:00">August 22, 2020</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Kafka+%EA%B0%9C%EC%9A%94%20http%3A%2F%2Flocalhost%3A4000%2Fportfolio%2F2020-08-23-kafka%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fportfolio%2F2020-08-23-kafka%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fportfolio%2F2020-08-23-kafka%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/portfolio/2020-08-22-post/" class="pagination--pager" title="springboot-2.2 Init 세팅에 대한 기록
+">이전</a>
+    
+    
+      <a href="/portfolio/2020-08-23-kafka_1/" class="pagination--pager" title="[Kafka]카프카의 특징-1
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2020 b329's. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>
