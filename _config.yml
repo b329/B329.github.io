@@ -282,6 +282,18 @@ defaults:
       share: true
       related: true
 
+  - scope:
+      path: ""
+      type: categories
+    values:
+      show_date: true
+      read_time: true
+      layout: single
+      author_profile: true
+      comments: true
+      share: true
+      related: true
+
   # _pages
   - scope:
       path: ""
@@ -302,12 +314,6 @@ defaults:
       type: tag
     values:
         author_profile: true
-
-  - scope:
-      path: ""
-      type: category
-    values:
-      comments: false
 
   # _docs
   - scope:

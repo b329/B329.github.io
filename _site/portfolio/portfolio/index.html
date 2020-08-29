@@ -31,7 +31,7 @@
 
 
 
-  <meta property="article:published_time" content="2020-08-29T18:35:02+09:00">
+  <meta property="article:published_time" content="2020-08-21T21:26:28+09:00">
 
 
 
@@ -206,8 +206,8 @@
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="@Autowired 가 없는 이유">
-    <meta itemprop="description" content="@Autowired 가 없는 이유는 빈을 주입받는 방식에@Autowired setter 생성자 주입방식이 있는데여기서는 Controller 와 Service 에서 lombok 의 @RequiredArgsConstructor 로 생성자 Bean 을 주입받기 때문에Autowired 가 없다.생성자를 직접 안쓰고 lombok 을 사용하는 이점은 해당 클래스의 의존성 관계가 변경될때마다 생성자코드를 계속해서 수정해야 하는 번거로움을피하기 위해서이다.">
-    <meta itemprop="datePublished" content="2020-08-29T18:35:02+09:00">
+    <meta itemprop="description" content="  @Autowired 가 없는 이유는 빈을 주입받는 방식에@Autowired setter 생성자 주입방식이 있는데여기서는 Controller 와 Service 에서 lombok 의 @RequiredArgsConstructor 로 생성자 Bean 을 주입받기 때문에Autowired 가 없다.생성자를 직접 안쓰고 lombok 을 사용하는 이점은 해당 클래스의 의존성 관계가 변경될때마다 생성자코드를 계속해서 수정해야 하는 번거로움을피하기 위해서이다.">
+    <meta itemprop="datePublished" content="2020-08-21T21:26:28+09:00">
     
 
     <div class="page__inner-wrap">
@@ -223,7 +223,7 @@
     
       
       <i class="far fa-calendar-alt" aria-hidden="true"></i>
-      <time datetime="2020-08-29T18:35:02+09:00">August 29, 2020</time>
+      <time datetime="2020-08-21T21:26:28+09:00">August 21, 2020</time>
     
 
     
@@ -249,38 +249,40 @@
 
       <section class="page__content" itemprop="text">
         
-        <p>@Autowired 가 없는 이유는 빈을 주입받는 방식에
+        <ul>
+  <li>@Autowired 가 없는 이유는 빈을 주입받는 방식에
 @Autowired setter 생성자 주입방식이 있는데
 여기서는 Controller 와 Service 에서 lombok 의 @RequiredArgsConstructor 로 생성자 Bean 을 주입받기 때문에
 Autowired 가 없다.
 생성자를 직접 안쓰고 lombok 을 사용하는 이점은 해당 클래스의 의존성 관계가 변경될때마다 생성자코드를 계속해서 수정해야 하는 번거로움을
-피하기 위해서이다.</p>
+피하기 위해서이다.</li>
+</ul>
 
-<p>@RequiredArgsConstructor
-@Service
-public class PostsService {
-    private final PostsRepository postsRepository;</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@RequiredArgsConstructor</span>
+<span class="nd">@Service</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PostsService</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">PostsRepository</span> <span class="n">postsRepository</span><span class="o">;</span>
+    <span class="nd">@Transactional</span>
+    <span class="kd">public</span> <span class="nc">Long</span> <span class="nf">save</span><span class="o">(</span><span class="nc">PostsSaveRequestDto</span> <span class="n">requestDto</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">postsRepository</span><span class="o">.</span><span class="na">save</span><span class="o">(</span><span class="n">requestDto</span><span class="o">.</span><span class="na">toEntity</span><span class="o">()).</span><span class="na">getId</span><span class="o">();</span>
+    <span class="o">}</span>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@Transactional
-public Long save(PostsSaveRequestDto requestDto) {
-    return postsRepository.save(requestDto.toEntity()).getId();
-}
+    <span class="nd">@Transactional</span>
+    <span class="kd">public</span> <span class="nc">Long</span> <span class="nf">update</span><span class="o">(</span><span class="nc">Long</span> <span class="n">id</span><span class="o">,</span> <span class="nc">PostsUpdateRequestDto</span> <span class="n">requestDto</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Posts</span> <span class="n">posts</span> <span class="o">=</span> <span class="n">postsRepository</span><span class="o">.</span><span class="na">findById</span><span class="o">(</span><span class="n">id</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">orElseThrow</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="nc">IllegalArgumentException</span><span class="o">(</span><span class="s">"해당 게시글이 없습니다. id="</span><span class="o">+</span> <span class="n">id</span><span class="o">));</span>
 
-@Transactional
-public Long update(Long id, PostsUpdateRequestDto requestDto) {
-    Posts posts = postsRepository.findById(id)
-            .orElseThrow(() -&gt; new IllegalArgumentException("해당 게시글이 없습니다. id="+ id));
+        <span class="n">posts</span><span class="o">.</span><span class="na">update</span><span class="o">(</span><span class="n">requestDto</span><span class="o">.</span><span class="na">getTitle</span><span class="o">(),</span> <span class="n">requestDto</span><span class="o">.</span><span class="na">getContent</span><span class="o">());</span>
 
-    posts.update(requestDto.getTitle(), requestDto.getContent());
+                <span class="k">return</span> <span class="n">id</span><span class="o">;</span>
+    <span class="o">}</span>
 
-            return id;
-}
-
-public PostsResponseDto findById(Long id) {
-    Posts entity = postsRepository.findById(id)
-            .orElseThrow(() -&gt; new IllegalArgumentException("해당 게시글이 없습니다. id=" + id));
-    return new PostsResponseDto(entity);
-} }
+    <span class="kd">public</span> <span class="nc">PostsResponseDto</span> <span class="nf">findById</span><span class="o">(</span><span class="nc">Long</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Posts</span> <span class="n">entity</span> <span class="o">=</span> <span class="n">postsRepository</span><span class="o">.</span><span class="na">findById</span><span class="o">(</span><span class="n">id</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">orElseThrow</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="nc">IllegalArgumentException</span><span class="o">(</span><span class="s">"해당 게시글이 없습니다. id="</span> <span class="o">+</span> <span class="n">id</span><span class="o">));</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">PostsResponseDto</span><span class="o">(</span><span class="n">entity</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </code></pre></div></div>
 
 <p>관련소스 참조: <a href="https://github.com/b329/springboot2.git">B329’s GitHub repo</a>.</p>
@@ -292,10 +294,48 @@ public PostsResponseDto findById(Long id) {
       <footer class="page__meta">
         
         
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/springboot" class="page__taxonomy-item" rel="tag">springboot</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/springboot" class="page__taxonomy-item" rel="tag">springboot</a>
+    
+    </span>
+  </p>
 
 
         
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2020-08-29T18:35:02+09:00">August 29, 2020</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2020-08-21T21:26:28+09:00">August 21, 2020</time></p>
 
 
       </footer>
