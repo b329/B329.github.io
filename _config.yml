@@ -28,7 +28,7 @@ baseurl                  : ""# the subpath of your site, e.g. "/blog"
 repository               : "b329/springboot2"# GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : "/assets/images/88x88.png" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
-masthead_title           : "삽질보단 개발을"# overrides the website title displayed in the masthead, use " " for no title
+masthead_title           : "last exit to entanglement"# overrides the website title displayed in the masthead, use " " for no title
 breadcrumbs            : true # true, false (default)
 words_per_minute         : 200
 comments:
@@ -330,6 +330,14 @@ defaults:
       layout: single
       author_profile: false
       share: true
+  # _literature
+  - scope:
+      path: ""
+      type: literature
+    values:
+      layout: single
+      author_profile: false
+      share: true
 
 docs:
   - title: Getting Started
@@ -378,5 +386,8 @@ docs:
 
 collections:
   portfolio:
+    output: true
+    permalink: /:collection/:path/
+  literature:
     output: true
     permalink: /:collection/:path/
