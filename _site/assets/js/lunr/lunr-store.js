@@ -5,12 +5,6 @@ var store = [{
         "url": "http://localhost:4000/literature/hello_pittsburgh/",
         "teaser": null
       },{
-        "title": "Poem",
-        "excerpt":"Poem 안녕, 피츠버그 그리고 책 - 김용택 안녕, 아빠. 지금 나는 버스를 기다리고 있어. 마치 시 같다. 버스를 기다리고 서 있는 모습이 한그루의 나무 같다. 잔디와 나무가 있는 집들은 멀리 있고, 햇살과 바람과 하얀 낮달이 네 마음속을 지나는 소리가 들린다. 한그루의 나무가 세상에 서 있기까지 얼마나 많은 것들을 잃고 또...","categories": [],
-        "tags": [],
-        "url": "http://localhost:4000/literature/poem/",
-        "teaser": null
-      },{
         "title": "뒤처진 새",
         "excerpt":"뒤처진 새 - Reiner Kunze   ​   철새 떼가,남쪽에서   날아오며   도나우강을 건널 때면, 나는 기다린다   뒤쳐진 새를   ​   그게 어떤 건지, 내가 안다   남들과 발 맞출 수 없다는 것   ​   어릴 적부터 내가 안다   ​   뒤쳐진 새가 머리 위로 날아 떠나면   나는 그에게 내 힘을 보낸다  ","categories": ["poet"],
         "tags": ["poem"],
