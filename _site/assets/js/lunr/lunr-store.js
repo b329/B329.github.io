@@ -42,7 +42,7 @@ var store = [{
         "teaser": null
       },{
         "title": "[Kafka]카프카 설치 - #1",
-        "excerpt":"Kafka 의 간단한 producer 와 consumer 의 작동 테스트 on mac -Kafka cluster 설치 brew install wget wget http://apache.mirror.cdnetworks.com/kafka/2.6.0/kafka_2.13-2.6.0.tgz tar -zxvf kafka_2.13-2.6.0.tgz cd kafka_2.13-2.6.0 -주키퍼 실행 cd bin ./zookeeper-server-start.sh ../config/zookeeper.properties &amp; -주키퍼 실행 cd bin ./zookeeper-server-start.sh ../config/zookeeper.properties &amp; -카프카 브로커 실행 ./kafka-server-start.sh ../config/server.properties &amp; 하나의 zookeeper 에 여러대의 kafka cluster...","categories": ["kafka"],
+        "excerpt":"Kafka 의 간단한 producer 와 consumer 의 작동 테스트 on mac -Kafka cluster 설치 brew install wget wget http://apache.mirror.cdnetworks.com/kafka/2.6.0/kafka_2.13-2.6.0.tgz tar -zxvf kafka_2.13-2.6.0.tgz cd kafka_2.13-2.6.0 -주키퍼 실행 cd bin ./zookeeper-server-start.sh ../config/zookeeper.properties &amp; -카프카 브로커 실행 ./kafka-server-start.sh ../config/server.properties &amp; 하나의 zookeeper 에 여러대의 kafka cluster 를 실행하고 싶을때 vi server.properties 파일을 열면...","categories": ["kafka"],
         "tags": ["kafka"],
         "url": "http://localhost:4000/portfolio/2020-08-24-kafka_do_1/",
         "teaser": null
