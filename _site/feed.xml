@@ -1,4 +1,26 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-09-02T23:55:50+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술블로그</title><subtitle>기술블로그</subtitle><author><name>b329' blog</name></author><entry><title type="html">springboot-2.2 Init 세팅에 대한 기록</title><link href="http://localhost:4000/springboot/post/" rel="alternate" type="text/html" title="springboot-2.2 Init 세팅에 대한 기록" /><published>2020-08-22T21:26:28+09:00</published><updated>2020-08-22T21:26:28+09:00</updated><id>http://localhost:4000/springboot/post</id><content type="html" xml:base="http://localhost:4000/springboot/post/">&lt;p&gt;기본 springframework 을 만들면서 기록을 함께 해두기 위해 작성되었음.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-09-09T11:38:26+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술블로그</title><subtitle>기술블로그</subtitle><author><name>b329' blog</name></author><entry><title type="html">Agile &amp;amp; Scrum 에 대한 정리</title><link href="http://localhost:4000/scrum/scrum/" rel="alternate" type="text/html" title="Agile &amp;amp; Scrum 에 대한 정리" /><published>2020-09-08T21:26:28+09:00</published><updated>2020-09-08T21:26:28+09:00</updated><id>http://localhost:4000/scrum/scrum</id><content type="html" xml:base="http://localhost:4000/scrum/scrum/">&lt;p&gt;&lt;strong&gt;-왜 기민한(agile) 조직이 되야 하는가?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;기업간 경쟁이 치열해지는 상황에서 언제 나타날지 모르는 잠재적 경쟁자들과 싸워야 하며, 달라지는 고객 및
+조직원들의 요구에도 기민하게 반응해야 살아남을 수 있는 환경이 되었다.
+숨겨져 있던 고객의 니즈를 발굴하여 짧은 시간 안에 글로벌 기업으로 자리잡은 예) 페이스북, 우버, 에어이앤비&lt;/p&gt;
+
+&lt;p&gt;전문가들은 위계적인 구조에서 리더가 지시, 통제하는 기존의 경영 기법으로는 이같은 사업 환경에서 생존할 수 없으며,
+시장 경쟁력을 확보하기 위해서는 기민한(agile)조직이 되어야 한다고 말한다.&lt;/p&gt;
+
+&lt;p&gt;실제로 기민한 조직은 더 큰 재무적 성과를 가져올뿐 아니라 높은 직원 몰입을 통해 생산성을 증신시킨다는 연구 결과들이
+누적되고 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;-기민한(agile) 조직이란 무엇인가?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;기민성(agility)의 사전적 의미는 빠르고 쉽게 움직이는 것을 말한다. 전문가에 따라 기민한 조직을 설명하는 방식은 조금 다르지만,
+기민한 조직이 급변하는 환경에 빠르게 대응, 적으할 수 있다는 것에는 이견이 없다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;-기민한 조직들이 보이는 다섯가지 특성&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;조직 전체에 공유된 목적과 비전&lt;/li&gt;
+  &lt;li&gt;권한위임을 받은 네트워크 팀 구조&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>b329' blog</name></author><category term="scrum" /><category term="scrum" /><summary type="html">-왜 기민한(agile) 조직이 되야 하는가?</summary></entry><entry><title type="html">springboot-2.2 Init 세팅에 대한 기록</title><link href="http://localhost:4000/springboot/post/" rel="alternate" type="text/html" title="springboot-2.2 Init 세팅에 대한 기록" /><published>2020-08-22T21:26:28+09:00</published><updated>2020-08-22T21:26:28+09:00</updated><id>http://localhost:4000/springboot/post</id><content type="html" xml:base="http://localhost:4000/springboot/post/">&lt;p&gt;기본 springframework 을 만들면서 기록을 함께 해두기 위해 작성되었음.
 아래 소스 링크를 참조하면 기본적으로 제작한 springboot 2.2.0 을 기반으로 작성한 소스코드를
 내려받고 실행해볼 수 있습니다.&lt;/p&gt;
 
