@@ -56,7 +56,13 @@ var store = [{
         "title": "Agile & Scrum 에 대한 정리",
         "excerpt":"-왜 기민한(agile) 조직이 되야 하는가? 기업간 경쟁이 치열해지는 상황에서 언제 나타날지 모르는 잠재적 경쟁자들과 싸워야 하며, 달라지는 고객 및 조직원들의 요구에도 기민하게 반응해야 살아남을 수 있는 환경이 되었다. 숨겨져 있던 고객의 니즈를 발굴하여 짧은 시간 안에 글로벌 기업으로 자리잡은 예) 페이스북, 우버, 에어이앤비 전문가들은 위계적인 구조에서 리더가 지시, 통제하는 기존의...","categories": ["scrum"],
         "tags": ["scrum"],
-        "url": "http://localhost:4000/portfolio/2020-09-08-scrum/",
+        "url": "http://localhost:4000/portfolio/2020-09-08-agile/",
+        "teaser": null
+      },{
+        "title": "애자일 방법론 ① : 스크럼(scrum)",
+        "excerpt":"-스크럼의 기원 오늘날 애자일 기법으로 많이 활용되고 있는 스크럽은 소프트웨어 개발에 적용되는 방법론 중 하나로 제프 서덜랜드와 켄 슈와버에 의해 창안되었다. 스크럼 방법론을 개발한 것은 이들이지만, 스크럼이라는 용어가 처음 등장한 것은 노나카 이쿠지로와 타케우치 히로타카가 하버드비즈니스리뷰에 발표한 ‘새로운 신제품 개발 방식(The new new product development game)’이었다. 서덜랜드와 슈와버는 노나카와 타케우치의...","categories": ["scrum"],
+        "tags": ["scrum"],
+        "url": "http://localhost:4000/portfolio/2020-09-09-scrum/",
         "teaser": null
       },{
         "title": "@Autowired 가 없는 이유",
@@ -98,6 +104,6 @@ var store = [{
         "title": "Agile & Scrum 에 대한 정리",
         "excerpt":"-왜 기민한(agile) 조직이 되야 하는가? 기업간 경쟁이 치열해지는 상황에서 언제 나타날지 모르는 잠재적 경쟁자들과 싸워야 하며, 달라지는 고객 및 조직원들의 요구에도 기민하게 반응해야 살아남을 수 있는 환경이 되었다. 숨겨져 있던 고객의 니즈를 발굴하여 짧은 시간 안에 글로벌 기업으로 자리잡은 예) 페이스북, 우버, 에어이앤비 전문가들은 위계적인 구조에서 리더가 지시, 통제하는 기존의...","categories": ["scrum"],
         "tags": ["scrum"],
-        "url": "http://localhost:4000/scrum/scrum/",
+        "url": "http://localhost:4000/scrum/agile/",
         "teaser": null
       }]
