@@ -59,8 +59,14 @@ var store = [{
         "url": "http://localhost:4000/portfolio/2020-09-08-agile/",
         "teaser": null
       },{
+        "title": "애자일 방법론 ② : 린스타트업(lean startup)",
+        "excerpt":"린스타트업 린스타트업은 IMVU()의 창립자 중 한명인 에릭 리스(Eric Ries)에 의해 개발된 방법론이다. 그는 IMVU 설립 초기 자신들의 기대와는 다르게 실패의 어려움을 겪던 중 도요타 생산 시스템인 린 기법에 영감을 받아 린스타트업을 개발하게 된다. 린 생산 방식에서는 가치 흐름 상에서 발생하는 낭비를 제거하는 것을 목표로 하는데, 이는 린스타트업에서도 그대로 적용된다. 리스는...","categories": ["scrum"],
+        "tags": ["scrum"],
+        "url": "http://localhost:4000/portfolio/2020-09-09-lean_startup/",
+        "teaser": null
+      },{
         "title": "애자일 방법론 ① : 스크럼(scrum)",
-        "excerpt":"-스크럼의 기원 오늘날 애자일 기법으로 많이 활용되고 있는 스크럽은 소프트웨어 개발에 적용되는 방법론 중 하나로 제프 서덜랜드와 켄 슈와버에 의해 창안되었다. 스크럼 방법론을 개발한 것은 이들이지만, 스크럼이라는 용어가 처음 등장한 것은 노나카 이쿠지로와 타케우치 히로타카가 하버드비즈니스리뷰에 발표한 ‘새로운 신제품 개발 방식(The new new product development game)’이었다. 서덜랜드와 슈와버는 노나카와 타케우치의...","categories": ["scrum"],
+        "excerpt":"스크럼의 기원 오늘날 애자일 기법으로 많이 활용되고 있는 스크럽은 소프트웨어 개발에 적용되는 방법론 중 하나로 제프 서덜랜드와 켄 슈와버에 의해 창안되었다. 스크럼 방법론을 개발한 것은 이들이지만, 스크럼이라는 용어가 처음 등장한 것은 노나카 이쿠지로와 타케우치 히로타카가 하버드비즈니스리뷰에 발표한 ‘새로운 신제품 개발 방식(The new new product development game)’이었다. 서덜랜드와 슈와버는 노나카와 타케우치의...","categories": ["scrum"],
         "tags": ["scrum"],
         "url": "http://localhost:4000/portfolio/2020-09-09-scrum/",
         "teaser": null

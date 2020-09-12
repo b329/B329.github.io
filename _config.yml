@@ -95,9 +95,9 @@ analytics:
 
 # Site Author
 author:
-  name             : "b329' blog"
+  name             : "Dennis' blog"
   avatar           : "/assets/images/bio-photo.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "**MBTI :** INTP" # "I am an **amazing** person."
+#  bio              : "**MBTI :** INTP" # "I am an **amazing** person."
   location         : "I'm from nowhere"
   email            :
   links:
