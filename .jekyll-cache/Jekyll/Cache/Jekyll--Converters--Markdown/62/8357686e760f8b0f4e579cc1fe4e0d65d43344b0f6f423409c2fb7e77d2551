@@ -1,0 +1,127 @@
+I"� <ul>
+  <li><strong>Kafka 의 간단한 producer 와 consumer 의 작동 테스트 on mac</strong></li>
+</ul>
+
+<p><strong>-Kafka cluster 설치</strong></p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">    brew install wget
+    wget http://apache.mirror.cdnetworks.com/kafka/2.6.0/kafka_2.13-2.6.0.tgz
+    tar -zxvf kafka_2.13-2.6.0.tgz 
+    cd kafka_2.13-2.6.0
+</span></code></pre></div></div>
+
+<p><strong>-주키퍼 실행</strong></p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">cd bin
+./zookeeper-server-start.sh ../config/zookeeper.properties &amp;
+</span></code></pre></div></div>
+
+<p><strong>-카프카 브로커 실행</strong></p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">./kafka-server-start.sh ../config/server.properties &amp;
+</span></code></pre></div></div>
+
+<ul>
+  <li>하나의 zookeeper 에 여러대의 kafka cluster 를 실행하고 싶을때
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go"> vi server.properties 
+ 
+ 파일을 열면 아래와 같은 부분이 나오게 되는데 여기서 다음 두가지 사항을 변경시켜준다.
+ 3개의 cluster 를 돌리고 싶다면 세개의 파일을 만들어주고 각각 실행을 시켜준다.
+ server.properties , server1.properties ,server2.properties 
+   
+ : server.properties 
+    broker.id=0
+    listeners=PLAINTEXT://:9092
+ : server1.properties 
+    broker.id=1
+    listeners=PLAINTEXT://:9093
+ : server2.properties 
+    broker.id=2
+    listeners=PLAINTEXT://:9094
+
+ .... vi 에디터로 열오놓은 내용
+</span><span class="gp"> #</span><span class="c">############################ Server Basics #############################</span>
+<span class="go">   
+</span><span class="gp"> #</span><span class="w"> </span>The <span class="nb">id </span>of the broker. This must be <span class="nb">set </span>to a unique integer <span class="k">for </span>each broker.
+<span class="go"> broker.id=1
+   
+</span><span class="gp"> #</span><span class="c">############################ Socket Server Settings #############################</span>
+<span class="go">   
+</span><span class="gp"> #</span><span class="w"> </span>The address the socket server listens on. It will get the value returned from 
+<span class="gp"> #</span><span class="w"> </span>java.net.InetAddress.getCanonicalHostName<span class="o">()</span> <span class="k">if </span>not configured.
+<span class="gp"> #</span><span class="w">   </span>FORMAT:
+<span class="gp"> #</span><span class="w">     </span>listeners <span class="o">=</span> listener_name://host_name:port
+<span class="gp"> #</span><span class="w">   </span>EXAMPLE:
+<span class="gp"> #</span><span class="w">     </span>listeners <span class="o">=</span> PLAINTEXT://your.host.name:9092
+<span class="go"> listeners=PLAINTEXT://:9093
+</span><span class="c"> ....
+</span><span class="go">
+위에서 생성한 3개의 kafka cluster 를 실행시켜준다.
+ ./kafka-server-start.sh ../config/server.properties &amp;
+ ./kafka-server-start.sh ../config/server1.properties &amp;
+ ./kafka-server-start.sh ../config/server2.properties &amp;
+</span></code></pre></div>    </div>
+  </li>
+</ul>
+
+<p><strong>-카프카 토픽 만들기</strong></p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">./kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test
+
+</span><span class="gp">b329:bin $</span><span class="w"> </span>./kafka-topics.sh <span class="nt">--create</span> <span class="nt">--zookeeper</span> localhost:2181 <span class="nt">--replication-factor</span> 1 <span class="nt">--partitions</span> 1 <span class="nt">--topic</span> <span class="nb">test</span>
+<span class="go">Created topic test.
+</span></code></pre></div></div>
+
+<p><strong>-카프카 producer실행</strong></p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">./kafka-console-producer.sh --broker-list localhost:9092 --topic test
+</span><span class="gp">&gt;</span>This is <span class="nb">test </span><span class="k">for </span><span class="nb">local </span>kafka producer..
+<span class="gp">&gt;</span>second <span class="nb">test</span> 
+<span class="gp">&gt;</span>this is third <span class="nb">test</span>
+</code></pre></div></div>
+
+<p><strong>-Topic operation</strong></p>
+
+<p>-Topic 생성</p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">  bin/kafka-topics.sh --create --zookeeper 127.0.0.1:2181 --replication-factor 3 --partitions 1 --topic PayLog
+  bin/kafka-topics.sh --create --zookeeper 127.0.0.1:2181 --replication-factor 3 --partitions 1 --topic buyingLog
+  bin/kafka-topics.sh --create --zookeeper 127.0.0.1:2181 --replication-factor 3 --partitions 1 --topic sellerLog
+  
+</span><span class="gp">  b329-MacBookPro:kafka_2.13-2.6.0 b329$</span><span class="w"> </span>bin/kafka-topics.sh <span class="nt">--create</span> <span class="nt">--zookeeper</span> 127.0.0.1:2181 <span class="nt">--replication-factor</span> 3 <span class="nt">--partitions</span> 1 <span class="nt">--topic</span> PayLog
+<span class="go">  Created topic PayLog.
+</span><span class="gp">  b329-MacBookPro:kafka_2.13-2.6.0 b329$</span><span class="w"> </span>bin/kafka-topics.sh <span class="nt">--create</span> <span class="nt">--zookeeper</span> 127.0.0.1:2181 <span class="nt">--replication-factor</span> 3 <span class="nt">--partitions</span> 1 <span class="nt">--topic</span> buyingLog
+<span class="go">  Created topic buyingLog.
+</span><span class="gp">  b329-MacBookPro:kafka_2.13-2.6.0 b329$</span><span class="w"> </span>bin/kafka-topics.sh <span class="nt">--create</span> <span class="nt">--zookeeper</span> 127.0.0.1:2181 <span class="nt">--replication-factor</span> 3 <span class="nt">--partitions</span> 1 <span class="nt">--topic</span> sellerLog
+<span class="go">  Created topic sellerLog.
+</span><span class="gp">  b329-MacBookPro:kafka_2.13-2.6.0 b329$</span><span class="w"> 
+</span></code></pre></div></div>
+
+<p>-Topic 리스트 확인</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">  bin/kafka-topics.sh --list --zookeeper 127.0.0.1:2181
+
+</span><span class="gp">  b329-MacBookPro:kafka_2.13-2.6.0 b329$</span><span class="w"> </span>bin/kafka-topics.sh <span class="nt">--list</span> <span class="nt">--zookeeper</span> 127.0.0.1:2181
+<span class="go">  PayLog
+  __consumer_offsets
+  buyingLog
+  sellerLog
+</span></code></pre></div></div>
+
+<p>-Topic 삭제</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">  $</span><span class="w"> </span>bin/kafka-topics.sh <span class="nt">--delete</span> <span class="nt">--zookeeper</span> 127.0.0.1:2181 <span class="nt">--topic</span> <span class="nb">test</span>
+<span class="go">  
+</span><span class="gp">  b329-MacBookPro:kafka_2.13-2.6.0 b329$</span><span class="w"> </span>bin/kafka-topics.sh <span class="nt">--delete</span> <span class="nt">--zookeeper</span> 127.0.0.1:2181 <span class="nt">--topic</span> <span class="nb">test</span>
+<span class="go">  Topic test is marked for deletion.
+  Note: This will have no impact if delete.topic.enable is not set to true.
+</span></code></pre></div></div>
+
+<p>-Topic 상세정보 확인</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">  $</span><span class="w"> </span>bin/kafka-topics.sh <span class="nt">--describe</span> <span class="nt">--zookeeper</span> 127.0.0.1:2181
+<span class="go">  
+  bin/kafka-topics.sh --describe --zookeeper 127.0.0.1:2181
+  Topic: PayLog		PartitionCount: 1	ReplicationFactor: 3	Configs: 
+  Topic: PayLog		Partition: 0		Leader: 2		Replicas: 2,0,1	Isr: 2,0,1
+  Topic: buyingLog	PartitionCount: 1	ReplicationFactor: 3	Configs: 
+  Topic: buyingLog	Partition: 0		Leader: 1		Replicas: 1,2,0	Isr: 1,2,0
+  Topic: sellerLog	PartitionCount: 1	ReplicationFactor: 3	Configs: 
+  Topic: sellerLog	Partition: 0		Leader: 0		Replicas: 0,1,2	Isr: 0,1,2
+</span></code></pre></div></div>
+
+:ET

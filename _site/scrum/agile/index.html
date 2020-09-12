@@ -1,0 +1,780 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.20.1 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Agile &amp; Scrum 에 대한 정리 - 기술블로그</title>
+<meta name="description" content="-왜 기민한(agile) 조직이 되야 하는가?">
+
+
+  <meta name="author" content="Dennis' blog">
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="기술블로그">
+<meta property="og:title" content="Agile &amp; Scrum 에 대한 정리">
+<meta property="og:url" content="http://localhost:4000/scrum/agile/">
+
+
+  <meta property="og:description" content="-왜 기민한(agile) 조직이 되야 하는가?">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2020-09-08T21:26:28+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/scrum/agile/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "b329's",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="기술블로그 Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/88x88.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          last exit to entanglement
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/portfolio">Collections</a>
+            </li><li class="masthead__menu-item">
+              <a href="/literature">Literatrue</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="http://localhost:4000/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/scrum" itemprop="item"><span itemprop="name">Scrum</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">Agile & Scrum 에 대한 정리</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/bio-photo.jpg" alt="Dennis' blog" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Dennis' blog</h3>
+    
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">I'm from nowhere</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://www.facebook.com/youngcheol.na.10" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i><span class="label">Facebook</span></a></li>
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Agile &amp; Scrum 에 대한 정리">
+    <meta itemprop="description" content="-왜 기민한(agile) 조직이 되야 하는가?">
+    <meta itemprop="datePublished" content="2020-09-08T21:26:28+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Agile &amp; Scrum 에 대한 정리
+</h1>
+          
+
+
+  <p class="page__meta">
+
+    
+      
+      <i class="far fa-calendar-alt" aria-hidden="true"></i>
+      <time datetime="2020-09-08T21:26:28+09:00">September 8, 2020</time>
+    
+
+    
+      
+      <span class="post__meta-sep"></span>
+      
+    
+
+    
+      
+      
+
+      <i class="far fa-clock" aria-hidden="true"></i>
+      
+        2 분 소요
+      
+    
+
+  </p>
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p><strong>-왜 기민한(agile) 조직이 되야 하는가?</strong></p>
+
+<p>기업간 경쟁이 치열해지는 상황에서 언제 나타날지 모르는 잠재적 경쟁자들과 싸워야 하며, 달라지는 고객 및
+조직원들의 요구에도 기민하게 반응해야 살아남을 수 있는 환경이 되었다.
+숨겨져 있던 고객의 니즈를 발굴하여 짧은 시간 안에 글로벌 기업으로 자리잡은 예) 페이스북, 우버, 에어이앤비</p>
+
+<p>전문가들은 위계적인 구조에서 리더가 지시, 통제하는 기존의 경영 기법으로는 이같은 사업 환경에서 생존할 수 없으며,
+시장 경쟁력을 확보하기 위해서는 기민한(agile)조직이 되어야 한다고 말한다.</p>
+
+<p>실제로 기민한 조직은 더 큰 재무적 성과를 가져올뿐 아니라 높은 직원 몰입을 통해 생산성을 증신시킨다는 연구 결과들이
+누적되고 있다.</p>
+
+<p><strong>-기민한(agile) 조직이란 무엇인가?</strong></p>
+
+<p>기민성(agility)의 사전적 의미는 빠르고 쉽게 움직이는 것을 말한다. 전문가에 따라 기민한 조직을 설명하는 방식은 조금 다르지만,
+기민한 조직이 급변하는 환경에 빠르게 대응, 적으할 수 있다는 것에는 이견이 없다.</p>
+
+<p><strong>-기민한 조직들이 보이는 다섯가지 특성</strong></p>
+
+<p>맥킨지 보고서에는 기민한 조직들이 다음과 같은 공통적인 특성을 보인다고 말한다.</p>
+
+<ul>
+  <li>조직 전체에 공유된 목적과 비전</li>
+  <li>권한위임을 받은 네트워크 팀 구조</li>
+  <li>빠른 의사결정과 학습 사이클</li>
+  <li>역동적인 사람중심 모델</li>
+  <li>차세대 기술 활용</li>
+</ul>
+
+<p><img src="/assets/images/scrum/agile-orgs_ex1.png" alt="Image Alt 텍스트" /></p>
+
+<p><strong>-애자일 기법의 이점은 무엇인가?</strong></p>
+
+<ul>
+  <li>
+    <p>전통 적인 기법 : 애자일 기법이 기존의 경영 방식과 큰 차이를 보이는 부분은 실행속도와 적응성이다. 전통적인 조직에서는 리더가 전략을
+수립하면 조직원들은 전략 달성을 위해 맡겨진 업무를 리더의 통제하에 수행하게 된다.
+리더는 전략의 예측도를 높이기 위해 조사와 분석에 많은 시간을 할애하게 되고, 조직원들은 계획대로 과업 일정을 준수하는 것이 성과가 된다.
+따라서 실행의 속도가 빠르기 어렵고, 중간에 계획을 변경하는 것이 쉽지 않으며, 전략 실행 과정에서 위험이 감지되더라도 조직원들은 이를 묵인한 채
+계획 고수에 초점을 두는 경향이 있다.</p>
+  </li>
+  <li>
+    <p>애자일 기법 : 반면 애자일 기법에서는 예측의 완성도, 장기 계획보다는 빠른 실행과 학습에 더 무게를 둔다.
+불확실한 환경에서 예측의 정확도를 높이는 것은 어려우므로, 사전 조사와 분석이 아닌 반복적인 실험, 실행을 통해 고객의 요구에 가까워지는 것을
+지향한다. 또한 1~4주의 짧은 주기로 업무 목표를 설정, 달성하면서 환경 변화에 기민하게 적응해 나간다.</p>
+  </li>
+  <li>
+    <p>애자일 기법의 이점은 빠른 실행에 국한되지 않는다. 애자일 방식은 혁신과 생산성은 높이고 비용, 시간 낭비는 줄여준다. 애자일 기법에서는 소규모의 다기능팀들이 프로젝트를 수행한다. 팀은 과제 수행에 필요한 스킬을 갖춘 인력으로 구성되어 불필요한 절차와 업무 지연을 방지하고, 협업의 효과성을 증진시킨다. 팀에는 업무 수행에 대한 권한과 책임이 부여되기 때문에 팀원들은 주인의식을 가지고 높은 몰입을 보이게 되며, 이는 자연스레 생산성 향상으로 이어진다.</p>
+  </li>
+  <li>
+    <p>애자일 기법에서는 과제를 모듈화하여 우선순위가 높은 순서대로 진행하고, 하나의 작은 프로젝트가 끝날 때마다 과제의 효과성 검증을 기반으로 이후 목표를 설정하기 때문에 적응적으로 목표를 추구할 수 있다. 큰 프로젝트를 한번에 실행할 때는 완료까지 시간이 많이 걸리고, 출시 후 고객 반응이 좋을 않을 경우 기업에 큰 손실을 끼치게 된다. 하지만 애자일 기법에서는 큰 과제를 작은 단위로 세분하여 우선순위에 따라 점진적으로 수행하고, 검증을 반복하면서 항로 수정이 이루어지기 때문에 위험의 크기는 줄이고, 지속적인 진화를 통해 보다 빠르게 조직이 목표한 성과를 달성할 수 있다.</p>
+  </li>
+  <li>
+    <p>애자일 기법의 성공적인 도입을 위해서는 이들의 핵심 가치와 작동 원리를 이해하는 것이 무엇보다 중요할 것이다.</p>
+  </li>
+</ul>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/scrum" class="page__taxonomy-item" rel="tag">scrum</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/scrum" class="page__taxonomy-item" rel="tag">scrum</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2020-09-08T21:26:28+09:00">September 8, 2020</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Agile+%26+Scrum+%EC%97%90+%EB%8C%80%ED%95%9C+%EC%A0%95%EB%A6%AC%20http%3A%2F%2Flocalhost%3A4000%2Fscrum%2Fagile%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fscrum%2Fagile%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fscrum%2Fagile%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/kafka/kafka_do_2/" class="pagination--pager" title="[Kafka]카프카 메세지 producer 과 consumer - #2
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">참고</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/kafka/kafka_do_2/" rel="permalink">[Kafka]카프카 메세지 producer 과 consumer - #2
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+
+    
+      
+      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+      <time datetime="2020-08-22T21:26:28+09:00">August 22, 2020</time>
+    
+
+    
+      
+        <br \>
+      
+    
+
+    
+      
+      
+
+      <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+      
+        최대 1 분 소요
+      
+    
+
+  </p>
+
+    <p class="archive__item-excerpt" itemprop="description">-Producer 메세지 생산하기
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/kafka/kafka_do_1/" rel="permalink">[Kafka]카프카 설치 - #1
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+
+    
+      
+      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+      <time datetime="2020-08-22T21:26:28+09:00">August 22, 2020</time>
+    
+
+    
+      
+        <br \>
+      
+    
+
+    
+      
+      
+
+      <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+      
+        2 분 소요
+      
+    
+
+  </p>
+
+    <p class="archive__item-excerpt" itemprop="description">
+  Kafka 의 간단한 producer 와 consumer 의 작동 테스트 on mac
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/kafka/kafka_1/" rel="permalink">[Kafka]카프카의 특징-1
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+
+    
+      
+      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+      <time datetime="2020-08-22T21:26:28+09:00">August 22, 2020</time>
+    
+
+    
+      
+        <br \>
+      
+    
+
+    
+      
+      
+
+      <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+      
+        1 분 소요
+      
+    
+
+  </p>
+
+    <p class="archive__item-excerpt" itemprop="description">
+  이 글은 카프카, 데이터 플랫폼의 최강자 고승범/공용준 님의 책을 공부하며
+정리하는 글입니다.
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/kafka/kafka/" rel="permalink">Kafka 개요
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+
+    
+      
+      <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+      <time datetime="2020-08-22T21:26:28+09:00">August 22, 2020</time>
+    
+
+    
+      
+        <br \>
+      
+    
+
+    
+      
+      
+
+      <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+      
+        2 분 소요
+      
+    
+
+  </p>
+
+    <p class="archive__item-excerpt" itemprop="description">Apache Kafka(아파치 카프카)는 LinkedIn에서 개발된 분산 메시징 시스템으로써 2011년에 오픈소스로 공개되었다.
+대용량의 실시간 로그처리에 특화된 아키텍처 설계를 통하여 기존 메시징 시스템보다 우수한 TPS를 보여주고 있다.
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2020 b329's. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+
+  
+
+
+
+
+
+  </body>
+</html>
