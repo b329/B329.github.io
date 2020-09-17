@@ -330,6 +330,14 @@ defaults:
       layout: single
       author_profile: false
       share: true
+  # _algorithm
+  - scope:
+      path: ""
+      type: algorithm
+    values:
+      layout: single
+      author_profile: false
+      share: true
   # _literature
   - scope:
       path: ""
@@ -386,6 +394,9 @@ docs:
 
 collections:
   portfolio:
+    output: true
+    permalink: /:collection/:path/
+  algorithm:
     output: true
     permalink: /:collection/:path/
   literature:
