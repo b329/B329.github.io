@@ -77,6 +77,12 @@ var store = [{
         "url": "http://localhost:4000/portfolio/2020-09-09-scrum/",
         "teaser": null
       },{
+        "title": "Event Driven 란?",
+        "excerpt":"Event Driven은 IT 영역에서 오래 사용된 키워드이며, 현재도 그 영향력이 대단하여 2018년 Gartner에서 선정한 유망한 기술 트렌드 중 하나로 뽑히기도 했다. (Top 10 Strategic Technology Trends for 2018: Event-Driven Model) Event Driven이라는 용어는 programming, architecture와 연결되어 다양한 정의로 표현된다. EDA (Event-driven architecture) 분산된 시스템 간에 이벤트를 생성, 발행 (publishing)하고 발행된...","categories": ["kafka"],
+        "tags": ["kafka"],
+        "url": "http://localhost:4000/portfolio/2020-09-11-Event-driven/",
+        "teaser": null
+      },{
         "title": "@Autowired 가 없는 이유",
         "excerpt":"@Autowired 가 없는 이유는 빈을 주입받는 방식에 @Autowired setter 생성자 주입방식이 있는데 여기서는 Controller 와 Service 에서 lombok 의 @RequiredArgsConstructor 로 생성자 Bean 을 주입받기 때문에 Autowired 가 없다. 생성자를 직접 안쓰고 lombok 을 사용하는 이점은 해당 클래스의 의존성 관계가 변경될때마다 생성자코드를 계속해서 수정해야 하는 번거로움을 피하기 위해서이다. @RequiredArgsConstructor @Service...","categories": ["springboot"],
         "tags": ["springboot"],
