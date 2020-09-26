@@ -2,7 +2,13 @@ var store = [{
         "title": "Al-Khwārizmī",
         "excerpt":"문제를 해결하기 위한 절차나 방법. 문제를 해결하기 위한 절차나 방법. 이 단어는 페르시아의 수학자인 알-콰리즈미(الخوارزمي)의 이름에서 유래했다고 알려졌다. 아라비아 기수법을 나타내는 algorism도 같은 어원을 가진다. 이 때문에 구분을 위해 algorithm 쪽을 ‘알고리듬’으로 읽는 경우도 있으나 일반적으론 그냥 알고리즘으로 쓰며[1], 그냥 algorism 쪽을 뜻으로 풀어 쓰기 때문에 혼동은 없는 편이다. 참고로...","categories": ["algorithm"],
         "tags": ["algorithm"],
-        "url": "http://localhost:4000/algorithm/pittsburgh/",
+        "url": "http://localhost:4000/algorithm/algorithm_init/",
+        "teaser": null
+      },{
+        "title": "제네릭 프로그래밍",
+        "excerpt":"제네릭 프로그래밍 제네릭(generic)이란 파라미터의 타입이 나중에 지정(to-be-specified-later)되게 헤서 재활용성을 높일 수 있는 프로그래밍 스타일로서, 1989년 데이비드 무저(David Musser)와 알렉산더 스테파노프(Alexander Stepanov)가 고안했다. 특히 알렉산더 스테파노프는 C++ STL 의 창안자로도 유명하다. 그렇다면 각 언어에서 제네릭 프로그래밍의 문법이 어떻게 되는지에 대해 살펴보자. template&lt;class T, class U&gt; bool are_equal(T a, U b) {...","categories": ["algorithm"],
+        "tags": ["algorithm"],
+        "url": "http://localhost:4000/algorithm/generic_programming/",
         "teaser": null
       },{
         "title": "안녕, 피츠버그 그리고 책",
