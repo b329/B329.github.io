@@ -5,6 +5,12 @@ var store = [{
         "url": "http://localhost:4000/algorithm/algorithm_init/",
         "teaser": null
       },{
+        "title": "알고리즘 트레이딩",
+        "excerpt":"Studying algorithm trading system This is a real contents that I wrote on my mac using xingAPI, made by eBEST Investment &amp; Securities Co., Ltd. I made my mind to write python language at first. But I recognized the python library modules on xingAPI, like other common security API systems...","categories": ["algorithm"],
+        "tags": ["algorithm"],
+        "url": "http://localhost:4000/algorithm/algorithm_trding/",
+        "teaser": null
+      },{
         "title": "제네릭 프로그래밍",
         "excerpt":"제네릭 프로그래밍 제네릭(generic)이란 파라미터의 타입이 나중에 지정(to-be-specified-later)되게 헤서 재활용성을 높일 수 있는 프로그래밍 스타일로서, 1989년 데이비드 무저(David Musser)와 알렉산더 스테파노프(Alexander Stepanov)가 고안했다. 특히 알렉산더 스테파노프는 C++ STL 의 창안자로도 유명하다. 그렇다면 각 언어에서 제네릭 프로그래밍의 문법이 어떻게 되는지에 대해 살펴보자. template&lt;class T, class U&gt; bool are_equal(T a, U b) {...","categories": ["algorithm"],
         "tags": ["algorithm"],
