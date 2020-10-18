@@ -95,6 +95,12 @@ var store = [{
         "url": "http://localhost:4000/portfolio/2020-09-11-Event-driven/",
         "teaser": null
       },{
+        "title": "Agile Principles(애자일 12가지 원칙)",
+        "excerpt":"애자일 선언문 원문 링크 애자일 12가지 원칙 Agile은 일을 빠르게 하기 위해서가 아니라, 고객과 시장의 변화에 빠르게 대처하기 위한 방법입니다. Agile하게 일하기 위한 12가지 원칙에 대해서 소개합니다. 빠르다는걸 오해하면 안되는게 무리한 일정을 맞추느라 일을 급하게 한다는 것이 아니다 1. 초기부터 지속적으로 고객 만족 Our highest priority is to satisfy the...","categories": ["scrum"],
+        "tags": ["scrum"],
+        "url": "http://localhost:4000/portfolio/2020-09-16-agile2/",
+        "teaser": null
+      },{
         "title": "@Autowired 가 없는 이유",
         "excerpt":"@Autowired 가 없는 이유는 빈을 주입받는 방식에 @Autowired setter 생성자 주입방식이 있는데 여기서는 Controller 와 Service 에서 lombok 의 @RequiredArgsConstructor 로 생성자 Bean 을 주입받기 때문에 Autowired 가 없다. 생성자를 직접 안쓰고 lombok 을 사용하는 이점은 해당 클래스의 의존성 관계가 변경될때마다 생성자코드를 계속해서 수정해야 하는 번거로움을 피하기 위해서이다. @RequiredArgsConstructor @Service...","categories": ["springboot"],
         "tags": ["springboot"],
