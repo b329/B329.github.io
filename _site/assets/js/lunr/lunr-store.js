@@ -48,7 +48,7 @@ var store = [{
         "teaser": null
       },{
         "title": "Kafka 개요",
-        "excerpt":"Apache Kafka(아파치 카프카)는 LinkedIn에서 개발된 분산 메시징 시스템으로써 2011년에 오픈소스로 공개되었다. 대용량의 실시간 로그처리에 특화된 아키텍처 설계를 통하여 기존 메시징 시스템보다 우수한 TPS를 보여주고 있다. INTRODUCTION APACHE KAFKA ™는 분산 형 스트리밍 플랫폼 입니다. 그게 정확히 무슨 뜻입니까? 우리는 스트리밍 플랫폼이 세 가지 핵심 기능을 가지고 있다고 생각합니다. 이를 통해...","categories": ["kafka"],
+        "excerpt":"pre-requisite Queue 에 대해 정리된 링크 - Agile 관련링크 1. 메세지 큐 정리 2. 오픈소스 Meggage Queue 솔루션 3. confluent 사이트 Apache Kafka(아파치 카프카)는 LinkedIn에서 개발된 분산 메시징 시스템으로써 2011년에 오픈소스로 공개되었다. 대용량의 실시간 로그처리에 특화된 아키텍처 설계를 통하여 기존 메시징 시스템보다 우수한 TPS를 보여주고 있다. INTRODUCTION APACHE KAFKA ™는...","categories": ["kafka"],
         "tags": ["kafka"],
         "url": "http://localhost:4000/portfolio/2020-08-23-kafka/",
         "teaser": null
